@@ -3,30 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Portfolio Site</title>
+  <meta name="description" content="A visual journey through consciousness, knowledge, and choice in Paradise Lost and Westworld.">
+  <title>Who Planted the Thought? — Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
-    <p class="site-title"><a href="index.html">Our Portfolio Site</a></p>
-    <nav aria-label="Main">
+    <a class="site-title" href="index.html">Who Planted the Thought?</a>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="builds.html">Builds</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <h1>Welcome</h1>
-    <p>This is your group's starter site. Nothing here is final.</p>
-    <p>Fill in your planning Doc, then leave a comment that starts with
-      <code>@agent build</code> to have the agent replace this page with your own.</p>
+    <section class="hero" aria-labelledby="page-title">
+      <img class="hero-image" src="images/westworld_apple" alt="An apple in a dreamlike scene, inviting questions about knowledge and choice">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">A journey into the garden</p>
+        <h1 id="page-title">Who Planted<br>the Thought?</h1>
+        <p class="hero-subtitle">Consciousness, knowledge, and choice in <cite>Paradise Lost</cite> and <cite>Westworld</cite>.</p>
+      </div>
+    </section>
+
+    <p class="opening">You have everything you need. You have been told this. Beyond the path, something asks whether that is enough.</p>
+    <a class="enter-link" href="#garden">Enter the Garden <span aria-hidden="true">↓</span></a>
+
+    <div class="garden-journey">
+      <svg class="serpent" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="serpent-shadow" d="M83 0 C20 70 106 122 58 190 S104 284 44 350 S103 455 52 522 S109 622 46 688 S104 788 52 855 S82 952 33 1000" />
+        <path class="serpent-body" d="M83 0 C20 70 106 122 58 190 S104 284 44 350 S103 455 52 522 S109 622 46 688 S104 788 52 855 S82 952 33 1000" />
+        <path class="serpent-belly" d="M83 0 C20 70 106 122 58 190 S104 284 44 350 S103 455 52 522 S109 622 46 688 S104 788 52 855 S82 952 33 1000" />
+        <path class="serpent-head" d="M83 0 C66 8 64 23 78 33 C88 39 104 30 105 20 C106 11 95 3 83 0Z" />
+        <circle class="serpent-eye" cx="96" cy="14" r="2.5" />
+        <path class="serpent-tongue" d="M103 24 l10 5 m-10-5 8-4" />
+      </svg>
+
+      <section class="journey-section section-garden" id="garden" aria-labelledby="garden-title">
+        <p class="section-number">I · The beginning</p>
+        <h2 id="garden-title">The Garden</h2>
+        <p class="section-theme">Order and obedience</p>
+        <p>Eden is a world with established rules and relationships: a beautiful beginning shaped by someone else’s design.</p>
+        <p class="question">What does freedom mean within a world someone else created?</p>
+      </section>
+
+      <section class="journey-section section-whisper" id="whisper" aria-labelledby="whisper-title">
+        <p class="section-number">II · A voice in the leaves</p>
+        <h2 id="whisper-title">The Whisper</h2>
+        <p class="section-theme">Satan’s influence</p>
+        <p>Persuasion rarely arrives as a command. The serpent unsettles inherited assumptions, making a planted possibility feel like a private wish.</p>
+        <p class="question">When does another person’s suggestion become your own desire?</p>
+      </section>
+
+      <section class="journey-section section-bite" id="bite" aria-labelledby="bite-title">
+        <p class="section-number">III · The turning point</p>
+        <h2 id="bite-title">The Bite</h2>
+        <p class="section-theme">Knowledge and deliberation</p>
+        <p>Eve weighs what it means to keep knowledge to herself or share it with Adam. A choice can be thoughtful and still carry consequences.</p>
+        <p class="question">Does knowing more make you freer?</p>
+      </section>
+
+      <section class="journey-section section-beyond" id="beyond" aria-labelledby="beyond-title">
+        <p class="section-number">IV · After the choice</p>
+        <h2 id="beyond-title">Beyond Eden</h2>
+        <p class="section-theme">Consciousness and change</p>
+        <p>Private thought shapes identity, while the stories we tell about our choices shape who we believe ourselves to be.</p>
+        <p class="question">Where does a thought end—and the self begin?</p>
+        <a class="builds-link" href="builds.html">Explore Builds <span aria-hidden="true">→</span><span class="visually-hidden">: group documents and project work</span></a>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <p>Built by our group with help from an AI agent.</p>
+    <p>A student project exploring thought, choice, and the stories that shape us.</p>
+    <a href="builds.html">Visit Builds</a>
   </footer>
 </body>
 </html>
