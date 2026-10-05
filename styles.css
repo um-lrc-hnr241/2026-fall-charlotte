@@ -27,7 +27,7 @@ body {
 .site-header,
 main,
 .site-footer {
-  max-width: var(--max-width);
+  max-width: none;
   margin: 0 auto;
   padding: 1.5rem 1.5rem;
 }
