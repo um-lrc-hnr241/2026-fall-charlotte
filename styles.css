@@ -21,7 +21,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.65;
   color: var(--ink);
-  background: var(--parchment);
+  background: linear-gradient(to bottom, #e7e5d2 0%, #d6d8c7 38%, #394438 68%, #142b22 100%);
 }
 
 .site-header,
@@ -243,7 +243,7 @@ video {
 .journey-section {
   position: relative;
   z-index: 0;
-  background-image: radial-gradient(ellipse at 8% 12%, rgba(82, 100, 71, 0.12), transparent 35%);
+  background: transparent;
   min-height: 22rem;
   padding: clamp(3rem, 8vw, 6.5rem) max(1.5rem, calc((100% - 56rem) / 2));
 }
@@ -271,11 +271,11 @@ video {
 }
 
 .section-garden {
-  background: #e7e5d2;
+  background: transparent;
 }
 
 .section-whisper {
-  background: #d6d8c7;
+  background: transparent;
 }
 
 .section-whisper .section-number,
@@ -285,8 +285,7 @@ video {
 
 .section-bite {
   color: var(--parchment);
-  background-color: #394438;
-  background-image: radial-gradient(ellipse at 88% 18%, rgba(163, 41, 50, 0.2), transparent 38%);
+  background: transparent;
 }
 
 .section-bite .section-number,
@@ -300,8 +299,7 @@ video {
 
 .section-beyond {
   color: var(--parchment);
-  background-color: var(--forest);
-  background-image: radial-gradient(ellipse at 88% 18%, rgba(163, 41, 50, 0.24), transparent 42%);
+  background: transparent;
 }
 
 .section-beyond .section-number,
