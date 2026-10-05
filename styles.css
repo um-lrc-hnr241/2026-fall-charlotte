@@ -1,10 +1,10 @@
 :root {
   --forest: #142b22;
   --moss: #526447;
-  --parchment: #f1ead9;
+  --parchment: #f2eedb;
   --ink: #1d271f;
   --muted: #465044;
-  --red: #8e302b;
+  --red: #a32932;
   --border: #c9c0aa;
   --max-width: 70rem;
 }
@@ -194,7 +194,9 @@ video {
   right: max(1rem, calc((100% - 65rem) / 2));
   width: clamp(3.5rem, 9vw, 7rem);
   height: 100%;
-  opacity: 0.72;
+  opacity: 0.82;
+  filter: drop-shadow(0 0 0.35rem rgba(34, 20, 15, 0.3));
+  animation: serpent-drift 9s ease-in-out infinite alternate;
 }
 
 .serpent-shadow,
@@ -241,6 +243,7 @@ video {
 .journey-section {
   position: relative;
   z-index: 0;
+  background-image: radial-gradient(ellipse at 8% 12%, rgba(82, 100, 71, 0.12), transparent 35%);
   min-height: 22rem;
   padding: clamp(3rem, 8vw, 6.5rem) max(1.5rem, calc((100% - 56rem) / 2));
 }
@@ -282,7 +285,8 @@ video {
 
 .section-bite {
   color: var(--parchment);
-  background: #394438;
+  background-color: #394438;
+  background-image: radial-gradient(ellipse at 88% 18%, rgba(163, 41, 50, 0.2), transparent 38%);
 }
 
 .section-bite .section-number,
@@ -296,7 +300,8 @@ video {
 
 .section-beyond {
   color: var(--parchment);
-  background: var(--forest);
+  background-color: var(--forest);
+  background-image: radial-gradient(ellipse at 88% 18%, rgba(163, 41, 50, 0.24), transparent 42%);
 }
 
 .section-beyond .section-number,
@@ -373,6 +378,17 @@ video {
   padding: 1.25rem 1.5rem;
   border-left: 4px solid var(--moss);
   background: #e7e5d2;
+}
+
+@keyframes serpent-drift {
+  from { transform: translateY(-0.25rem); }
+  to { transform: translateY(0.35rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serpent {
+    animation: none;
+  }
 }
 
 @media (max-width: 42rem) {
