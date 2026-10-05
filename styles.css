@@ -192,9 +192,9 @@ video {
   z-index: -1;
   top: 0;
   right: max(1rem, calc((100% - 65rem) / 2));
-  width: clamp(3.5rem, 9vw, 7rem);
+  width: clamp(4.5rem, 11vw, 9rem);
   height: 100%;
-  opacity: 0.82;
+  opacity: 0.95;
   filter: drop-shadow(0 0 0.35rem rgba(34, 20, 15, 0.3));
   animation: serpent-drift 9s ease-in-out infinite alternate;
 }
@@ -418,8 +418,8 @@ video {
 
   .serpent {
     right: 0.4rem;
-    width: 3rem;
-    opacity: 0.48;
+    width: 3.8rem;
+    opacity: 0.68;
   }
 
   .site-footer {
