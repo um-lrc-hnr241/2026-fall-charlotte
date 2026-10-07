@@ -378,6 +378,46 @@ video {
   background: #e7e5d2;
 }
 
+.team-main {
+  max-width: var(--max-width);
+  min-height: 70vh;
+  margin: 0 auto;
+}
+
+.team-main > .eyebrow {
+  color: var(--moss);
+}
+
+.team-intro {
+  max-width: 44rem;
+  margin-bottom: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.team-card {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--parchment);
+}
+
+.team-card h2 {
+  margin: 0 0 0.75rem;
+  color: var(--forest);
+  font-size: 1.5rem;
+}
+
+.profile-placeholder {
+  min-height: 10rem;
+  border: 2px dashed var(--moss);
+  background: #e7e5d2;
+}
+
 @keyframes serpent-drift {
   from { transform: translateY(-0.25rem); }
   to { transform: translateY(0.35rem); }
@@ -411,6 +451,10 @@ video {
     padding: 0.5rem;
   }
 
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .journey-section {
     min-height: 0;
     padding: 3.5rem 1.5rem;
@@ -425,6 +469,12 @@ video {
   .site-footer {
     padding-right: 1rem;
     padding-left: 1rem;
+  }
+}
+
+@media (max-width: 28rem) {
+  .team-grid {
+    grid-template-columns: 1fr;
   }
 }
 
