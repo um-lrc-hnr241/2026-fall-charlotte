@@ -70,6 +70,40 @@ nav a[aria-current="page"] {
   text-decoration-thickness: 3px;
 }
 
+nav .builds-menu {
+  position: relative;
+}
+
+nav .builds-menu summary {
+  color: var(--parchment);
+  cursor: pointer;
+}
+
+nav .builds-menu > ul {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  display: block;
+  min-width: 10rem;
+  max-width: calc(100vw - 2rem);
+  margin: 0;
+  padding: 0.4rem;
+  border: 1px solid var(--moss);
+  background: var(--forest);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+nav .builds-menu > ul a {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  white-space: nowrap;
+}
+
+nav .builds-menu > ul a:hover {
+  background: var(--moss);
+}
+
 a {
   color: var(--red);
 }
