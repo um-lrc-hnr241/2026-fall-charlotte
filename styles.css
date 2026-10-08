@@ -226,7 +226,7 @@ video {
   z-index: -1;
   top: 0;
   right: max(1rem, calc((100% - 65rem) / 2));
-  width: clamp(4.5rem, 11vw, 9rem);
+  width: clamp(7rem, 15vw, 12rem);
   height: 100%;
   opacity: 0.95;
   filter: drop-shadow(0 0 0.35rem rgba(34, 20, 15, 0.3));
@@ -496,7 +496,7 @@ video {
 
   .serpent {
     right: 0.4rem;
-    width: 3.8rem;
+    width: 5rem;
     opacity: 0.68;
   }
 
