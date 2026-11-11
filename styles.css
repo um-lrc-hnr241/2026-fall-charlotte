@@ -275,3 +275,43 @@ body.path main { background: linear-gradient(to bottom, #e7e5d2 0%, #d6d8c7 38%,
 @media (max-width: 62rem) { .path-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 48rem) { .path-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .path-card { transition: none; } }
+
+/* ---------- The Tree of Knowledge ---------- */
+.tree-grid { display: grid; grid-template-columns: minmax(0, 26rem) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.tree-svg { width: 100%; height: auto; display: block; }
+.tree-svg .canopy { fill: var(--moss); opacity: 0.2; }
+.tree-svg .wood { fill: none; stroke: var(--forest); stroke-linecap: round; }
+.tree-svg .snake { fill: none; stroke: var(--moss-soft); stroke-width: 5; stroke-linecap: round; }
+.fruit { cursor: pointer; }
+.fruit circle.skin { stroke: var(--forest); stroke-width: 1.5; }
+.fruit text { font-family: var(--sans); font-size: 13px; font-weight: 600; text-anchor: middle; pointer-events: none; }
+.fruit.ripe circle.skin { fill: var(--red); }
+.fruit.ripe text { fill: #fffaf0; }
+.fruit.ripening circle.skin { fill: #d6c48f; }
+.fruit.ripening text { fill: var(--forest); }
+.fruit.bud circle.skin { fill: var(--paper); stroke: var(--moss); stroke-dasharray: 4 4; }
+.fruit.bud text { fill: var(--muted); }
+.fruit .halo { fill: none; stroke: var(--forest); stroke-width: 2; opacity: 0; }
+.fruit.on .halo, .fruit:hover .halo { opacity: 1; }
+.fruit:focus { outline: none; }
+.fruit:focus-visible .halo { opacity: 1; stroke: var(--red); stroke-width: 3; }
+.fruit-info { background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 0.4rem; padding: clamp(1.5rem, 3vw, 2.25rem); box-shadow: 0 1.25rem 2.5rem rgba(20, 43, 34, 0.14); min-height: 17rem; }
+.fruit-info .no { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); }
+.fruit-info h3 { font-size: 2.2rem; margin: 0.4rem 0 0.3rem; color: var(--forest); }
+.fruit-info .kind { font-family: var(--sans); font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; }
+.fruit-info blockquote { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 2px solid var(--line); font-style: italic; font-size: 1.25rem; line-height: 1.45; }
+.fruit-info .note { color: var(--muted); }
+.fi-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem; }
+.badge { font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.7rem; border-radius: 10rem; border: 1px solid transparent; }
+.badge.ripe { background: var(--red); color: #fffaf0; }
+.badge.ripening { background: #d6c48f; color: var(--forest); }
+.badge.bud { border: 1px dashed var(--moss); color: var(--muted); }
+.fi-date { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 1.25rem; margin: 1.25rem 0 0; font-family: var(--sans); font-size: 0.8rem; color: var(--ink); }
+.legend span::before { content: ""; display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 50%; margin-right: 0.45rem; vertical-align: -0.08rem; border: 1px solid var(--forest); }
+.legend .lg-ripe::before { background: var(--red); }
+.legend .lg-ripening::before { background: #d6c48f; }
+.legend .lg-bud::before { background: var(--paper); border: 1px dashed var(--moss); }
+[hidden] { display: none !important; }
+@media (max-width: 48rem) { .tree-grid { grid-template-columns: 1fr; } .tree-svg { max-width: 20rem; margin: 0 auto; } .fruit-info { min-height: 0; } }
+#tree { scroll-margin-top: 3.5rem; }
