@@ -230,3 +230,8 @@ details.para p { margin: 0; padding: 1.1rem 1.25rem; text-indent: 0; font-size: 
 /* An opened member card spans the full row so the text has room */
 .member-card:has(details[open]) { grid-column: 1 / -1; }
 .member-card details.work[open] p { max-width: var(--read); }
+
+/* ---------- Footer: paths + course line ---------- */
+.site-footer .wrap { flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
+.foot-paths a { margin: 0 0.15rem; }
+.foot-line { letter-spacing: 0.08em; }
