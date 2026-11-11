@@ -154,22 +154,20 @@ cite { font-style: italic; }
 .page-head .back:hover { color: #fff; }
 
 /* ---------- Team page ---------- */
-.team-index { position: sticky; top: 4.25rem; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
-.team-index ul { display: flex; gap: 0.25rem; margin: 0; padding: 0.6rem 0; list-style: none; overflow-x: auto; }
-.team-index a { display: block; white-space: nowrap; padding: 0.4rem 0.85rem; font-family: var(--sans); font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; border-radius: 2rem; }
-.team-index a:hover { background: var(--parchment); color: var(--forest); }
-.member { display: grid; grid-template-columns: 17rem 1fr; gap: clamp(1.5rem, 5vw, 4rem); padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-bottom: 1px solid var(--line); scroll-margin-top: 8.5rem; }
-.member:last-child { border-bottom: 0; }
-.member-id .monogram { width: 5rem; height: 5rem; font-size: 1.5rem; margin-bottom: 1.25rem; }
-.member-id h2 { font-size: 1.9rem; }
-.member-id .role { margin: 0.4rem 0 0; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
-.member-id .role b { color: var(--forest); font-weight: 600; }
-.work-block { max-width: var(--read); }
-.work-block + .work-block { margin-top: 2rem; }
-.work-block .tag { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }
-.work-block .tag span { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); }
-.work-block .tag a { font-family: var(--sans); font-size: 0.8rem; font-weight: 600; }
-.work-block p { font-size: 1.1rem; }
+.member-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-items: start; }
+.member-card { background: var(--parchment); border: 1px solid var(--line); border-radius: 0.4rem; scroll-margin-top: 6rem; }
+.member-top { display: flex; align-items: center; gap: 1.1rem; padding: 1.5rem 1.5rem 1.25rem; }
+.member-top .monogram { width: 4rem; height: 4rem; font-size: 1.2rem; }
+.member-top h2 { font-size: 1.6rem; }
+.member-top .role { margin: 0.25rem 0 0; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.member-top .role b { color: var(--forest); font-weight: 600; }
+.member-card details.work { border-top: 1px solid var(--line); }
+.member-card details.work summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; padding: 0.9rem 1.5rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+.member-card details.work summary::-webkit-details-marker { display: none; }
+.member-card details.work summary::after { content: "+"; font-size: 1.2rem; line-height: 1; }
+.member-card details.work[open] summary::after { content: "–"; }
+.member-card details.work[open] { background: var(--paper); border-radius: 0 0 0.4rem 0.4rem; }
+.member-card details.work p { margin: 0; padding: 0.25rem 1.5rem 1.5rem; font-size: 1.05rem; }
 
 /* ---------- Essay (Build pages) ---------- */
 .essay-layout { display: grid; grid-template-columns: 13rem minmax(0, var(--read)); gap: clamp(2rem, 6vw, 5rem); justify-content: center; padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3rem, 8vw, 6rem); }
@@ -217,11 +215,10 @@ details.para p { margin: 0; padding: 1.1rem 1.25rem; text-indent: 0; font-size: 
 }
 @media (max-width: 48rem) {
   body { font-size: 1.0625rem; }
-  .hero .wrap, .statement, .member, .build-grid { grid-template-columns: 1fr; }
+  .hero .wrap, .statement, .member-grid, .build-grid { grid-template-columns: 1fr; }
   .hero-art { order: -1; width: min(70%, 16rem); }
   .btn.ghost { margin: 0.75rem 0 0; }
   .stages, .people { grid-template-columns: 1fr; }
-  .team-index { top: 0; position: static; }
   .site-header .wrap { padding-block: 0.6rem; }
   .site-nav a { padding: 0.4rem 0.6rem; }
 }
@@ -229,3 +226,7 @@ details.para p { margin: 0; padding: 1.1rem 1.25rem; text-indent: 0; font-size: 
   html { scroll-behavior: auto; }
   .build-card { transition: none; }
 }
+
+/* An opened member card spans the full row so the text has room */
+.member-card:has(details[open]) { grid-column: 1 / -1; }
+.member-card details.work[open] p { max-width: var(--read); }
