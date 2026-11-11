@@ -512,3 +512,86 @@ video {
   }
 }
 
+
+/* --- Site Plan v2 additions --- */
+.stage-quote {
+  margin: 1.25rem 0 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--red);
+}
+.stage-quote p { margin: 0; font-size: 1.3rem; font-style: italic; }
+.stage-quote footer { margin-top: 0.3rem; font-size: 0.95rem; opacity: 0.85; }
+.stage-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 700;
+  text-underline-offset: 0.25em;
+}
+.section-bite .stage-link,
+.section-beyond .stage-link,
+.section-beyond .explore-link { color: #f0a18a; }
+.closing { text-align: center; }
+.closing > * { margin-left: auto; margin-right: auto; }
+.closing-line {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-style: italic;
+  line-height: 1.3;
+}
+.closing-source {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0.06em;
+  color: #d1c28f;
+}
+.explore-link { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-weight: 700; }
+
+.essay-main { padding-top: 2.5rem; padding-bottom: 4rem; }
+.essay {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  box-shadow: 0 0.75rem 2rem rgba(10, 26, 19, 0.25);
+}
+.essay .eyebrow { color: var(--moss); }
+.essay h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); color: var(--forest); }
+.essay h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--forest); margin-top: 2.5rem; }
+.essay > p { text-indent: 1.5em; }
+.essay > p.eyebrow, .essay > p.essay-footer-links { text-indent: 0; }
+.bibliography ul { list-style: none; padding: 0; margin: 0; }
+.bibliography li {
+  padding-left: 2em;
+  text-indent: -2em;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.individual-intro { color: var(--muted); }
+details.para {
+  margin: 0.6rem 0;
+  border: 1px solid var(--border);
+  background: #fbf8ec;
+  scroll-margin-top: 1rem;
+}
+details.para summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  color: var(--forest);
+  font-weight: 700;
+}
+details.para[open] summary { border-bottom: 1px solid var(--border); }
+details.para p { margin: 0; padding: 1rem; }
+.essay-footer-links { margin-top: 2.5rem; font-size: 0.95rem; }
+.build-entry { margin: 2rem 0; padding-top: 1rem; border-top: 1px solid var(--border); }
+.build-entry h2 { margin-top: 0.3rem; }
+.build-entry h2 a { color: var(--forest); text-decoration: none; }
+.card-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+figure { max-width: 60rem; margin: 1rem auto; }
+figcaption { margin-top: 0.5rem; font-style: italic; color: var(--muted); }
