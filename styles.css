@@ -315,3 +315,24 @@ body.path main { background: linear-gradient(to bottom, #e7e5d2 0%, #d6d8c7 38%,
 [hidden] { display: none !important; }
 @media (max-width: 48rem) { .tree-grid { grid-template-columns: 1fr; } .tree-svg { max-width: 20rem; margin: 0 auto; } .fruit-info { min-height: 0; } }
 #tree { scroll-margin-top: 3.5rem; }
+
+/* ---------- The Garden grows darker as you scroll ---------- */
+body.garden .hero { background: linear-gradient(to bottom, var(--paper), #e7e5d2); color: var(--ink); }
+body.garden .hero .kicker { color: var(--moss); }
+body.garden .hero h1 { color: var(--forest); }
+body.garden .hero h1 em { color: var(--red); }
+body.garden .hero-lede { color: var(--muted); }
+body.garden .hero .btn.ghost { color: var(--forest); border-color: var(--forest); }
+body.garden .hero .btn.ghost:hover { background: rgba(20, 43, 34, 0.07); }
+body.garden .hero-art::after { border-color: rgba(82, 100, 71, 0.5); }
+body.garden .g1 { background: linear-gradient(to bottom, #e7e5d2, #d6d8c7); }
+body.garden .g2 { background: linear-gradient(to bottom, #d6d8c7, #a3ad98); border: 0; }
+body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem, var(--forest) 18rem); padding-top: calc(clamp(3.5rem, 8vw, 6rem) + 11rem); }
+.epigraph { margin: 0 0 1.75rem; max-width: 34rem; }
+.epigraph p { margin: 0; font-style: italic; font-size: 1.3rem; }
+.epigraph footer { margin-top: 0.4rem; font-family: var(--sans); font-size: 0.8rem; color: var(--muted); }
+
+/* Captioned plates */
+.plate { margin: 0; }
+.plate figcaption, .gallery figcaption.plate-cap { margin-top: 1.1rem; font-family: var(--sans); font-style: normal; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); }
+.hero .plate figcaption { text-align: center; margin-top: 1.75rem; }
