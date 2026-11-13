@@ -428,3 +428,41 @@ body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem
   .scroll-cue span { animation: none; }
   [data-par] img { transform: none; }
 }
+
+/* ---------- The Tree, redrawn ---------- */
+.tree-grid { grid-template-columns: minmax(0, 30rem) minmax(0, 1fr); }
+.tree-svg.v2 { overflow: visible; }
+.v2 .canopy-glow ellipse { fill: var(--moss); opacity: 0.2; }
+.v2 .ground { fill: var(--forest); opacity: 0.14; }
+.v2 .wood { stroke: none; }
+.v2 .wood path { fill: var(--forest); }
+.v2 .wood .twig { fill: none; stroke: var(--forest); }
+.v2 .bark path { fill: none; stroke: rgba(242, 238, 219, 0.13); stroke-width: 1.2; stroke-linecap: round; }
+.v2 .stem { fill: none; stroke: var(--forest); stroke-width: 1.6; stroke-linecap: round; }
+.v2 .coil { fill: none; stroke: #7d9070; stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.v2 .snake-head ellipse { fill: #7d9070; }
+.v2 .snake-head .eye { fill: var(--forest); }
+.v2 .snake-head .tongue { fill: none; stroke: var(--red); stroke-width: 1.4; stroke-linecap: round; }
+.v2 .fruit .skin { stroke-width: 1.5; }
+.v2 .fruit.ripe .skin { fill: var(--red); stroke: var(--red-dark); }
+.v2 .fruit.ripening .skin { fill: #d6c48f; stroke: #a8945a; }
+.v2 .fruit.bud .skin { fill: #e9ecd9; stroke: var(--moss); stroke-dasharray: 3 3; }
+.v2 .fruit.crown .skin { fill: #f6ecc9; stroke: #b0974c; stroke-dasharray: 3 3; }
+.v2 .fruit .shine { fill: none; stroke: rgba(255, 250, 240, 0.55); stroke-width: 1.6; stroke-linecap: round; }
+.v2 .fruit.bud .shine { display: none; }
+.v2 .fruit text { font-size: 13px; }
+.v2 .fruit.crown text { fill: #8c7636; font-size: 15px; }
+.v2 .rays path { fill: none; stroke: #b0974c; stroke-width: 1.5; stroke-linecap: round; }
+.v2 .rays { animation: spin 50s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.v2 .fruit .apple { transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.v2 .fruit:hover .apple, .v2 .fruit.on .apple { transform: scale(1.16); }
+.js .v2 .leaf { transform: scale(0); transition: transform 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) calc(var(--i) * 4ms + 150ms); }
+.js .v2.in .leaf { transform: scale(1); }
+.js .v2 .fruit { transform: scale(0); transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--i) * 110ms + 900ms); }
+.js .v2.in .fruit { transform: scale(1); }
+@media (max-width: 48rem) { .tree-grid { grid-template-columns: 1fr; } .tree-svg.v2 { max-width: 23rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .js .v2 .leaf, .js .v2 .fruit { transform: none; transition: none; }
+  .v2 .rays { animation: none; }
+}
