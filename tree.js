@@ -8,8 +8,8 @@ const FRUITS = [
   "kind": "Individual",
   "status": "ripe",
   "note": "Written individually. On the site so far: Sasha, Ollie, Will, Daisy.",
-  "link": "team.html",
-  "linkText": "Find it on the Paths →"
+  "link": "library.html#fruit-1",
+  "linkText": "Find it on the shelf →"
  },
  {
   "n": 2,
@@ -26,8 +26,8 @@ const FRUITS = [
   "kind": "Individual",
   "status": "ripe",
   "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
-  "link": "team.html",
-  "linkText": "Find it on the Paths →"
+  "link": "library.html#fruit-3",
+  "linkText": "Find it on the shelf →"
  },
  {
   "n": 4,
@@ -35,8 +35,8 @@ const FRUITS = [
   "kind": "Individual",
   "status": "ripe",
   "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
-  "link": "team.html",
-  "linkText": "Find it on the Paths →"
+  "link": "library.html#fruit-4",
+  "linkText": "Find it on the shelf →"
  },
  {
   "n": 5,
@@ -44,8 +44,8 @@ const FRUITS = [
   "kind": "Individual",
   "status": "ripe",
   "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
-  "link": "team.html",
-  "linkText": "Find it on the Paths →"
+  "link": "library.html#fruit-5",
+  "linkText": "Find it on the shelf →"
  },
  {
   "n": 6,

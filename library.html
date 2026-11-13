@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Library: every build Team Charlotte has written, bound and shelved. Pull a book from the shelf to open it.">
+  <title>The Library — Who Planted the Thought?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="library.css">
+</head>
+<body>
+  <header class="top">
+    <a class="lbl box" href="index.html">Back<span class="wide">&nbsp;/ The Garden</span></a>
+    <a class="logo" href="index.html" aria-label="Who Planted the Thought? Team Charlotte, home"><span class="logo-1"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M21 3c-9 3-12 7-6 11s3 8-5 12" fill="none" stroke="#8a9b7c" stroke-width="3.2" stroke-linecap="round"/><circle cx="22.5" cy="4.3" r="2.4" fill="#a32932"/></svg>Who Planted the Thought?</span><span class="logo-2">Team Charlotte</span></a>
+    <span class="lbl career" id="career"></span>
+  </header>
+
+  <nav class="tabs" aria-label="Fruits"><span class="tab-ind" aria-hidden="true"></span></nav>
+
+  <section class="shelf" aria-label="Library shelf"><div class="stage"></div></section>
+  <button class="play" type="button" aria-label="Open book"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg></button>
+
+  <div class="caption" aria-live="polite">
+    <div class="mask cap-title"></div>
+    <div class="mask cap-sub lbl"></div>
+    <div class="mask cap-year"></div>
+  </div>
+  <button class="arrow prev" type="button" aria-label="Previous book"><svg viewBox="0 0 18 10" width="18" height="10" aria-hidden="true"><path d="M5 1L1 5l4 4M1 5h16" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+  <button class="arrow next" type="button" aria-label="Next book"><svg viewBox="0 0 18 10" width="18" height="10" aria-hidden="true"><path d="M13 1l4 4-4 4M17 5H1" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+
+  <footer class="foot">
+    <span class="lbl">HP 241 · Fall 2026 · Team Charlotte</span>
+    <span class="lbl"><a href="index.html#tree">Tree</a> / <a href="team.html">Paths</a> / <a href="creative.html">Orchard</a></span>
+  </footer>
+
+  <nav class="sr-only" aria-label="All essays on the shelf"><ul><li><a href="sasha.html#fruit-1">Build 1, Sasha Sindwani</a></li><li><a href="oliver.html#fruit-1">Build 1, Ollie Kaiden</a></li><li><a href="will.html#fruit-1">Build 1, Will Silbergeld</a></li><li><a href="daisy.html#fruit-1">Build 1, Daisy Maturo</a></li><li><a href="build-2.html">Build 2, Team Charlotte</a></li><li><a href="oliver.html#fruit-3">Build 3, Ollie Kaiden</a></li><li><a href="rhea.html#fruit-3">Build 3, Rhea Ajmera</a></li><li><a href="will.html#fruit-3">Build 3, Will Silbergeld</a></li><li><a href="daisy.html#fruit-3">Build 3, Daisy Maturo</a></li><li><a href="oliver.html#fruit-4">Build 4, Ollie Kaiden</a></li><li><a href="rhea.html#fruit-4">Build 4, Rhea Ajmera</a></li><li><a href="will.html#fruit-4">Build 4, Will Silbergeld</a></li><li><a href="daisy.html#fruit-4">Build 4, Daisy Maturo</a></li><li><a href="oliver.html#fruit-5">Build 5, Ollie Kaiden</a></li><li><a href="rhea.html#fruit-5">Build 5, Rhea Ajmera</a></li><li><a href="will.html#fruit-5">Build 5, Will Silbergeld</a></li><li><a href="daisy.html#fruit-5">Build 5, Daisy Maturo</a></li></ul></nav>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="detail" role="dialog" aria-modal="true" aria-labelledby="d-title">
+    <button class="lbl box d-close" type="button">Close</button>
+    <div class="logo d-logo" aria-hidden="true"><span class="logo-1"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M21 3c-9 3-12 7-6 11s3 8-5 12" fill="none" stroke="#8a9b7c" stroke-width="3.2" stroke-linecap="round"/><circle cx="22.5" cy="4.3" r="2.4" fill="#a32932"/></svg>Who Planted the Thought?</span><span class="logo-2">Team Charlotte</span></div>
+    <div class="d-text">
+      <div class="mask"><p class="lbl d-sub" id="d-sub"></p></div>
+      <div class="mask"><h1 class="d-title" id="d-title"></h1></div>
+      <div class="mask"><p class="lbl d-meta" id="d-meta"></p></div>
+      <div class="mask"><p class="d-syn" id="d-syn"></p></div>
+      <div class="mask"><p class="d-credit" id="d-credit"></p></div>
+      <div class="mask"><a class="lbl d-watch" id="d-read" href="#">Read the essay</a></div>
+    </div>
+    <div class="d-poster">
+      <svg viewBox="0 0 440 667" aria-hidden="true">
+        <defs>
+          <filter id="inkf" x="-30%" y="-30%" width="160%" height="160%"><feTurbulence type="fractalNoise" baseFrequency=".011" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="120" xChannelSelector="R" yChannelSelector="G"/></filter>
+          <mask id="ink" maskUnits="userSpaceOnUse" x="-200" y="-200" width="840" height="1067"><g filter="url(#inkf)" id="blobs"></g></mask>
+          <clipPath id="pclip"><rect width="440" height="667" rx="3"/></clipPath>
+        </defs>
+        <g clip-path="url(#pclip)"><g mask="url(#ink)" id="poster"></g></g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><i class="ring"></i><i class="dot"></i><span>Open</span></div>
+  <script src="books.js"></script>
+  <script src="library.js"></script>
+</body>
+</html>

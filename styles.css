@@ -466,3 +466,12 @@ body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem
   .js .v2 .leaf, .js .v2 .fruit { transform: none; transition: none; }
   .v2 .rays { animation: none; }
 }
+
+/* ---------- The Library teaser: a row of spines ---------- */
+.shelf-teaser { overflow: hidden; }
+.mini-shelf { display: flex; align-items: flex-end; justify-content: center; gap: 0.4rem; height: 20rem; margin: 0 0 2.5rem; padding-top: 1.5rem; border-bottom: 2px solid rgba(242, 238, 219, 0.28); overflow: hidden; }
+.mini-shelf a { flex: none; display: block; width: 3rem; height: calc(18rem * var(--hs, 1)); transform: translateY(106%); transition: transform 0.9s var(--ease) calc(var(--i) * 45ms); }
+.mini-shelf.in a { transform: none; }
+.mini-shelf.in a:hover { transform: translateY(-0.9rem); transition: transform 0.35s var(--ease); }
+.mini-shelf svg { display: block; width: 100%; height: 100%; }
+@media (prefers-reduced-motion: reduce) { .mini-shelf a { transform: none; transition: none; } }
