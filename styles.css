@@ -376,3 +376,55 @@ body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem
   .site-nav a { padding: 0.35rem 0.38rem; font-size: 0.74rem; white-space: nowrap; }
   .fruit-rail { top: calc(var(--hh, 5.6rem) + 0.4rem); }
 }
+
+/* ---------- Motion ---------- */
+@view-transition { navigation: auto; }
+:root { --ease: cubic-bezier(0.2, 0.8, 0.2, 1); --ease-io: cubic-bezier(0.76, 0, 0.18, 1); }
+.grain { position: fixed; inset: 0; z-index: 15; pointer-events: none; mix-blend-mode: multiply; opacity: 0.55; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .38 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 30; pointer-events: none; }
+.progress i { display: block; height: 100%; background: var(--red); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+
+/* lines rise out of a mask */
+.js .rise, .js .ln, .js .w { clip-path: inset(-0.12em -1em -0.26em -1em); }
+.js .rise > .rise-in, .js .ln > .ln-in { display: block; transform: translateY(calc(100% + 0.45em)); transition: transform 1s var(--ease) var(--d, 0ms); }
+.js .ln { display: block; }
+.js .rise.in > .rise-in, .js .in > .ln > .ln-in { transform: none; }
+.hero h1 .rise { display: block; }
+.js .w { display: inline-block; vertical-align: top; }
+.js .w > span { display: inline-block; transform: translateY(calc(100% + 0.45em)); transition: transform 0.8s var(--ease); }
+.js .w.in > span { transform: none; }
+/* blocks open like a shutter */
+.js .clip { clip-path: inset(100% -8rem -8rem -8rem); transition: clip-path 1.2s var(--ease-io) var(--d, 0ms), transform 0.2s, border-color 0.2s; }
+.js .clip.in { clip-path: inset(-8rem); }
+[data-par] { will-change: transform; }
+[data-par] img { transform: scale(1.14); }
+[data-tilt] { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+
+.hero { position: relative; }
+.scroll-cue { position: absolute; left: 50%; bottom: 1.25rem; width: 1px; height: 3rem; overflow: hidden; background: rgba(20, 43, 34, 0.18); }
+.scroll-cue span { display: block; height: 40%; background: var(--red); animation: cue 1.9s var(--ease-io) infinite; }
+@keyframes cue { from { transform: translateY(-100%); } to { transform: translateY(260%); } }
+
+/* The six stages scroll sideways while the section is pinned */
+.js .journey.h { padding-bottom: 0; }
+.js .journey.h .journey-pin { position: sticky; top: 4.25rem; height: calc(100vh - 4.25rem); display: flex; flex-direction: column; justify-content: center; gap: clamp(1rem, 3vh, 2rem); overflow: hidden; }
+.js .journey.h .section-head { margin-bottom: 0; }
+.js .journey.h .journey-pin > .wrap { width: 100%; }
+.js .journey.h .journey-track { display: flex; width: max-content; gap: 1.25rem; padding-inline: max(clamp(1.25rem, 4vw, 2.5rem), calc((100vw - var(--wrap)) / 2 + 2.5rem)); background: none; border: 0; will-change: transform; }
+.js .journey.h .stage { flex: none; width: min(29rem, 78vw); border: 1px solid rgba(242, 238, 219, 0.16); border-radius: 0.4rem; transition: background-color 0.6s, border-color 0.6s, transform 0.8s var(--ease); transform: translateY(0.9rem); }
+.js .journey.h .stage.on { background: var(--forest-2); border-color: rgba(214, 196, 143, 0.5); transform: none; }
+.js .journey.h .journey-meta { display: flex; align-items: center; gap: 1.25rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #d6c48f; }
+.j-line { position: relative; flex: 1; height: 1px; background: rgba(242, 238, 219, 0.2); }
+.j-line i { position: absolute; inset: -0.5px 0; background: var(--red); transform-origin: 0 50%; transform: scaleX(var(--jp, 0)); }
+.j-name { min-width: 11rem; text-align: right; color: var(--parchment); }
+
+.path-card { transition: transform 0.35s var(--ease), border-color 0.2s; }
+.fruit-info .btn, .btn { transition: background-color 0.25s, color 0.25s, transform 0.35s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .rise > .rise-in, .js .ln > .ln-in, .js .w > span { transform: none; transition: none; }
+  .js .clip { clip-path: none; transition: none; }
+  .scroll-cue span { animation: none; }
+  [data-par] img { transform: none; }
+}
