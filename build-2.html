@@ -16,9 +16,10 @@
       <nav class="site-nav" aria-label="Main navigation"><ul><li><a href="index.html">The Garden</a></li><li><a href="index.html#tree" aria-current="page">The Tree</a></li><li><a href="team.html">Paths</a></li><li><a href="creative.html">The Orchard</a></li></ul></nav>
     </div>
   </header>
+  
   <main id="main">
 
-    <div class="page-head"><div class="wrap"><a class="back" href="index.html#tree">← The Tree</a><p class="kicker">Fruit 02 · Build 2 · Team Charlotte</p><h1>Paradise Lost &amp; Westworld</h1><p>Does consciousness give us control over our actions, or merely awareness of them?</p></div></div>
+    <div class="page-head"><div class="wrap"><a class="back rise" href="index.html#tree">← The Tree</a><p class="kicker rise" style="--d:60ms">Fruit 02 · Build 2 · Team Charlotte</p><h1 class="rise" style="--d:140ms">Paradise Lost &amp; Westworld</h1><p class="rise" style="--d:260ms">Does consciousness give us control over our actions, or merely awareness of them?</p></div></div>
     <div class="wrap essay-layout">
       <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#essay">Essay</a></li><li><a href="#bib-title">Bibliography</a></li><li><a href="team.html">Each member’s paragraph</a></li></ul></aside>
       <article class="essay-body" id="essay">
@@ -108,7 +109,7 @@
     // Old links like build-2.html#para-noa now live on that member's Path
     (function () {
       var m = location.hash.match(/^#para-(sasha|noa|oliver|rhea|will|daisy)$/);
-      if (m) location.replace(m[1] + '.html');
+      if (m) location.replace(m[1] + '.html#fruit-2');
     })();
   </script>
 </body>

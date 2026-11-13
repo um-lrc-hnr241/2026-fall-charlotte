@@ -336,3 +336,43 @@ body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem
 .plate { margin: 0; }
 .plate figcaption, .gallery figcaption.plate-cap { margin-top: 1.1rem; font-family: var(--sans); font-style: normal; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); }
 .hero .plate figcaption { text-align: center; margin-top: 1.75rem; }
+
+/* ---------- Framed plates ---------- */
+.hero-art .arch { border-radius: 12rem 12rem 0.35rem 0.35rem; overflow: hidden; border: 1px solid rgba(82, 100, 71, 0.45); box-shadow: 0 2rem 4rem rgba(20, 43, 34, 0.28); }
+.hero-art .arch img { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.gallery .frame { overflow: hidden; border-radius: 0.3rem; border: 1px solid var(--line); box-shadow: 0 1.5rem 3rem rgba(20, 43, 34, 0.18); }
+.gallery .frame img { border: 0; border-radius: 0; box-shadow: none; }
+
+/* ---------- A Path's fruits: every build the member has written ---------- */
+.path-body { display: grid; grid-template-columns: 4.75rem minmax(0, 47rem); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.path-body:not(:has(.fruit-rail)) { grid-template-columns: minmax(0, 50rem); }
+.fruit-rail { position: sticky; top: 6.25rem; padding: 1rem 0.5rem 0.9rem; text-align: center; background: var(--paper); border: 1px solid var(--line); border-radius: 3rem; box-shadow: 0 1rem 2rem rgba(20, 43, 34, 0.14); }
+.fruit-rail p { margin: 0 0 0.7rem; font-family: var(--sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); }
+.fruit-rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; justify-items: center; }
+.fruit-rail a { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid var(--line); font-family: var(--sans); font-size: 0.78rem; font-weight: 600; color: var(--forest); text-decoration: none; transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s; }
+.fruit-rail a:hover { border-color: var(--red); transform: scale(1.08); }
+.fruit-rail a.on { background: var(--red); border-color: var(--red); color: #fffaf0; }
+.fruit-stack { display: grid; gap: clamp(1.5rem, 4vw, 2.75rem); }
+.fruit-stack .fruit-card { max-width: none; scroll-margin-top: 6rem; }
+.fruit-card.essay h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); margin-bottom: 1.5rem; }
+.fruit-card.essay > p { font-size: 1.12rem; }
+.passage { margin: 0 0 1.6rem; padding: 1.1rem 1.3rem; background: var(--parchment); border-left: 2px solid var(--moss); font-style: italic; font-size: 1.02rem; line-height: 1.6; color: #36403a; }
+.passage p { margin: 0; }
+.passage em { font-style: normal; }
+.path-card .chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.9rem; }
+.path-card .chips i { display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--red); color: #fffaf0; font-family: var(--sans); font-style: normal; font-size: 0.62rem; font-weight: 600; }
+@media (max-width: 48rem) {
+  .path-body { grid-template-columns: minmax(0, 1fr); }
+  .fruit-rail { position: sticky; top: 4.6rem; z-index: 5; display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0.9rem; justify-self: start; }
+  .fruit-rail p { margin: 0; }
+  .fruit-rail ol { display: flex; gap: 0.35rem; }
+  .fruit-rail a { width: 2.1rem; height: 2.1rem; font-size: 0.7rem; }
+}
+.journey-meta { display: none; }
+@media (max-width: 48rem) {
+  .site-header .wrap { gap: 0.2rem 1rem; }
+  .site-nav { max-width: 100%; }
+  .site-nav ul { gap: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .site-nav a { padding: 0.35rem 0.38rem; font-size: 0.74rem; white-space: nowrap; }
+  .fruit-rail { top: calc(var(--hh, 5.6rem) + 0.4rem); }
+}

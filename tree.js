@@ -7,7 +7,9 @@ const FRUITS = [
   "name": "Build 1",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually by each member."
+  "note": "Written individually. On the site so far: Sasha, Ollie, Will, Daisy.",
+  "link": "team.html",
+  "linkText": "Find it on the Paths →"
  },
  {
   "n": 2,
@@ -15,28 +17,35 @@ const FRUITS = [
   "kind": "Team essay · Paradise Lost & Westworld",
   "status": "ripe",
   "quote": "“Consciousness, in both cases, may illuminate the cage without unlocking it.”",
-  "link": "build-2.html"
+  "link": "build-2.html",
+  "linkText": "Taste this fruit →"
  },
  {
   "n": 3,
   "name": "Build 3",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually by each member."
+  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "link": "team.html",
+  "linkText": "Find it on the Paths →"
  },
  {
   "n": 4,
   "name": "Build 4",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually by each member."
+  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "link": "team.html",
+  "linkText": "Find it on the Paths →"
  },
  {
   "n": 5,
   "name": "Build 5",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually by each member."
+  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "link": "team.html",
+  "linkText": "Find it on the Paths →"
  },
  {
   "n": 6,
@@ -74,11 +83,17 @@ const LABELS = { ripe: "Ripe", ripening: "Ripening", bud: "Not yet grown" };
     set("fi-note", f.note);
     set("fi-date", f.date);
     const b = $("fi-badge"); b.textContent = LABELS[f.status]; b.className = "badge " + f.status;
-    const a = $("fi-link"); a.hidden = !f.link; if (f.link) a.href = f.link;
+    const a = $("fi-link"); a.hidden = !f.link; if (f.link) { a.href = f.link; a.textContent = f.linkText || "Taste this fruit →"; }
     document.querySelectorAll(".fruit").forEach(g => {
       const on = Number(g.dataset.fruit) === n;
       g.classList.toggle("on", on); g.setAttribute("aria-pressed", on);
     });
+    const card = document.querySelector(".fruit-info");
+    if (card && card.animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      card.querySelectorAll(":scope > *:not([hidden])").forEach((el, i) =>
+        el.animate([{ transform: "translateY(14px)", clipPath: "inset(0 0 100% 0)" }, { transform: "none", clipPath: "inset(0 0 -20% 0)" }],
+          { duration: 520, delay: i * 45, easing: "cubic-bezier(.2,.8,.2,1)", fill: "backwards" }));
+    }
   }
   document.querySelectorAll(".fruit").forEach(g => {
     const n = Number(g.dataset.fruit);
