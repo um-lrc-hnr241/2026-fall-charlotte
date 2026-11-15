@@ -665,3 +665,45 @@ body.garden .site-footer p { color: rgba(242, 238, 219, 0.82); }
   .v2 .snake-head, .brand svg, .brand svg path, .brand svg circle { transition: none; }
   .v2 .leaf:hover, .scene .lv:hover { animation: none; }
 }
+
+/* ---------- Paths: six trails that branch apart, and rejoin in the footer ---------- */
+.trails { display: block; width: 100%; height: clamp(4.5rem, 12vw, 8.5rem); margin: 0 0 1.5rem; overflow: visible; }
+.trails path { fill: none; stroke: var(--moss); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1 9; vector-effect: non-scaling-stroke; opacity: 0.8; }
+.trails .trunk { stroke-dasharray: none; stroke-width: 3; }
+.trails .end { stroke-dasharray: none; stroke-width: 10; opacity: 1; }
+.section.dark .trails path, .site-footer .trails path { stroke: var(--gold); opacity: 0.6; }
+.section.dark .trails .end, .site-footer .trails .end { opacity: 0.9; }
+@keyframes unroll { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 -10% 0); } }
+.trails.in { animation: unroll 1.6s var(--ease-io) backwards; }
+.rejoin { height: clamp(3.5rem, 9vw, 6rem); margin: 0 0 1.25rem; max-width: 44rem; }
+.site-footer .trails .me { opacity: 1; stroke: #fffaf0; stroke-width: 3; }
+.site-footer .trails .end.me { stroke-width: 11; }
+
+/* each Path has its own faint tint */
+.p-sasha { --tint: #1f4a3a; } .p-noa { --tint: #8a4a52; } .p-oliver { --tint: #b89a4a; }
+.p-rhea { --tint: #5d7a4a; } .p-will { --tint: #3a3f45; } .p-daisy { --tint: #c9a23f; }
+body.path main { background-image: var(--maze-ink), linear-gradient(to bottom, color-mix(in srgb, var(--tint, #e7e5d2) 17%, #e7e5d2) 0%, color-mix(in srgb, var(--tint, #d6d8c7) 12%, #d6d8c7) 38%, #394438 68%, #142b22 100%); }
+body.path .fruit-card { border-left-color: color-mix(in srgb, var(--tint, #526447) 70%, #526447); }
+body.path .path-top h1 { color: color-mix(in srgb, var(--tint, #142b22) 28%, #142b22); }
+
+/* ---------- The Orchard: the garden after the Fall, in mist ---------- */
+body.orchard { background: #101b16; }
+body.orchard main { position: relative; overflow: hidden; background: linear-gradient(to bottom, #142b22 0, #15221c 30rem, #1a2626 100%); }
+body.orchard .page-head { background-color: transparent; position: relative; z-index: 1; }
+body.orchard .section { position: relative; z-index: 1; }
+.mist { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.mist i { position: absolute; width: 85vw; height: 30rem; border-radius: 50%; background: radial-gradient(closest-side, rgba(203, 216, 204, 0.17), rgba(203, 216, 204, 0)); animation: drift 36s ease-in-out infinite alternate; will-change: transform; }
+.mist i:nth-child(1) { left: -25vw; top: 4rem; }
+.mist i:nth-child(2) { right: -30vw; top: 22rem; animation-duration: 47s; animation-delay: -12s; }
+.mist i:nth-child(3) { left: 10vw; top: 44rem; animation-duration: 55s; animation-delay: -30s; }
+@keyframes drift { from { transform: translate3d(-6vw, 0, 0); } to { transform: translate3d(14vw, -2rem, 0); } }
+body.orchard .gallery figure { animation: float 9s ease-in-out infinite alternate; }
+@keyframes float { from { transform: translateY(-6px); } to { transform: translateY(8px); } }
+body.orchard .gallery .frame { border-color: rgba(203, 216, 204, 0.25); box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5), 0 0 6rem rgba(170, 196, 178, 0.14); }
+body.orchard .gallery img { filter: saturate(0.82) contrast(1.03); }
+body.orchard .gallery figcaption.plate-cap { color: #b9c4ae; }
+body.orchard .leaf-fall { height: 38rem; filter: saturate(0.15) brightness(0.9); }
+body.orchard .site-footer { background-color: #101b16; }
+@media (prefers-reduced-motion: reduce) {
+  .trails.in, .mist i, body.orchard .gallery figure { animation: none !important; }
+}
