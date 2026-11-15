@@ -58,6 +58,8 @@
         if (!e.isIntersecting) return;
         const n = +e.target.dataset.n;
         journey.dataset.stage = n;
+        const count = journey.querySelector('.j-count');
+        if (count) count.textContent = '0' + n + ' / 0' + bands.length;
         if (n >= 3) fall();
       }), { rootMargin: '-48% 0px -48% 0px' });
       bands.forEach(b => mid.observe(b));
@@ -114,7 +116,7 @@
       if (step !== lastCoil) {
         lastCoil = step;
         const n = coils.length;
-        coils.forEach((c, i) => { c.style.strokeDashoffset = (1 - clamp(p * (n + 0.5) - i, 0, 1)).toFixed(3); });
+        coils.forEach((c, i) => { const o = 1 - clamp(p * (n + 0.5) - i, 0, 1); c.style.strokeDashoffset = o.toFixed(3); c.style.opacity = o > 0.995 ? 0 : 1; });
         if (head) head.style.visibility = p >= 0.98 ? 'visible' : 'hidden';
       }
     }

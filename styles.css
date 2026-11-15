@@ -496,3 +496,140 @@ body.garden .hero h1 em { color: var(--moss); }
 .page-head .back, .page-head .back:hover { color: var(--gold); }
 .path-card, .path-card:hover, .build-card, .build-card:hover { color: var(--ink); }
 .section.dark .path-card, .section.dark .path-card:hover { color: #fffaf0; }
+
+/* ---------- The serpent travels down Home ---------- */
+.serpent { position: absolute; pointer-events: none; overflow: visible; }
+.serpent .coils ellipse { fill: #7d9070; stroke: #56694c; stroke-width: 1.5; }
+.serpent .tail { fill: none; stroke: #7d9070; stroke-width: 6; stroke-linecap: round; }
+.serpent .s-head ellipse { fill: #869978; stroke: #56694c; stroke-width: 1.5; }
+.serpent .lid { fill: none; stroke: #2f3d2c; stroke-width: 1.4; stroke-linecap: round; }
+.sleeper { left: max(1.25rem, calc((100vw - var(--wrap)) / 2 + 2.5rem)); bottom: 1.4rem; width: 6.5rem; }
+@keyframes breathe { to { transform: scale(1.035, 1.06); } }
+.sleeper { transform-origin: 50% 100%; animation: breathe 3.8s ease-in-out infinite alternate; }
+.g1 { position: relative; }
+.waker { left: max(1.25rem, calc((100vw - var(--wrap)) / 2 + 2.5rem)); bottom: 0; width: 6.25rem; }
+.waker .coils ellipse { fill: #869a6a; stroke: #5d6e3f; }
+.waker .neck { fill: none; stroke: url(#scales); stroke-width: 13; stroke-linecap: round; stroke-dasharray: 1; }
+.waker .glint { fill: none; stroke: rgba(255, 249, 214, 0.8); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 0.14 1; stroke-dashoffset: 0.15; animation: glint 6.5s ease-in-out infinite; }
+@keyframes glint { 0%, 70% { stroke-dashoffset: 0.15; } 100% { stroke-dashoffset: -1; } }
+.waker .s-head ellipse { fill: #c2b05a; stroke: #7d7230; }
+.waker .eye, .scene .eye { fill: #c2414b; }
+.waker .tongue, .scene .tongue { fill: none; stroke: #c2414b; stroke-width: 1.5; stroke-linecap: round; }
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes appear { from { opacity: 0; } }
+.waker.in .neck { animation: draw 1.6s var(--ease-io) backwards; }
+.waker.in .s-head { animation: appear 0.4s linear 1.5s backwards; }
+@media (max-width: 48rem) {
+  .sleeper { left: auto; right: 1.25rem; width: 4.75rem; bottom: 1rem; }
+  .waker { width: 5.25rem; left: auto; right: 0.5rem; }
+  body.garden .g1 { padding-bottom: 9rem; }
+}
+
+/* ---------- The journey: six stages, each with its own light ---------- */
+.journey { position: relative; counter-reset: stage; --wood: #142b22; overflow-x: clip; }
+.j-head { padding: clamp(5rem, 12vw, 8rem) 0 1rem; background-image: var(--maze-ink), linear-gradient(to bottom, #a3ad98, #dfe5cf 11rem); background-size: 6.5rem, auto; }
+.j-head .section-head { margin-bottom: 0; }
+.j-head .section-head p { color: #3d4a3c; }
+.j-body { position: relative; }
+.stage-band { position: relative; display: flex; align-items: center; min-height: 84vh; padding: 9rem 0 7rem; overflow: hidden; }
+.stage-band > .wrap { width: 100%; }
+.stage-band .stage { position: relative; z-index: 1; max-width: 33rem; padding: 0; background: none; }
+.stage-band .stage::before { font-size: 0.8rem; color: var(--acc); }
+.stage-band .stage h3 { font-size: clamp(2.3rem, 5.5vw, 3.6rem); margin: 0.6rem 0 0.35rem; color: var(--ink); }
+.stage-band .stage .theme { font-size: 0.9rem; color: var(--mut); margin-bottom: 1.4rem; }
+.stage-band .stage p { font-size: 1.15rem; line-height: 1.65; color: var(--soft); }
+.stage-band .stage blockquote { margin: 1.4rem 0 0; font-size: 1.25rem; color: var(--ink); border-left-color: var(--rule); }
+.stage-band .stage blockquote p { color: var(--ink); font-size: 1.25rem; margin: 0; }
+.stage-band .stage blockquote footer { color: var(--mut); font-size: 0.8rem; }
+.stage-band .stage .q { margin-top: 1.4rem; font-size: 1.15rem; color: var(--acc); }
+.s1, .s2 { --ink: #142b22; --soft: #263329; --mut: #3d4a3c; --acc: #3a4c34; --rule: var(--moss); }
+.s3, .s4, .s5, .s6 { --ink: #fffaf0; --soft: rgba(242, 238, 219, 0.9); --mut: #a9b59c; --acc: var(--gold); --rule: var(--gold); }
+.s3 { --rule: #c2414b; }
+.s1 { background-image: var(--maze-ink); background-color: #dfe5cf; background-size: 6.5rem; padding-top: 5rem; }
+.s2 { background-image: var(--maze-ink), linear-gradient(to bottom, #dfe5cf, #b4bea2 10rem); background-size: 5.5rem, auto; }
+.s3 { background-image: var(--maze-light), linear-gradient(to bottom, #b4bea2, #2d332e 9rem); background-size: 4.5rem, auto; }
+.s4 { background-image: var(--maze-light), linear-gradient(to bottom, #2d332e, #213029 10rem); background-size: 4rem, auto; }
+.s5 { background-image: var(--maze-light), linear-gradient(to bottom, #213029, #18261f 10rem); background-size: 3.6rem, auto; }
+.s6 { background-image: var(--maze-light), linear-gradient(to bottom, #18261f, #0c1410 10rem); background-size: 3.2rem, auto; }
+/* 02: a shadow at the edge */
+.s2::after { content: ""; position: absolute; inset: 0 0 0 auto; width: min(38vw, 30rem); background: linear-gradient(to left, rgba(20, 43, 34, 0.42), rgba(20, 43, 34, 0)); pointer-events: none; }
+/* 03: the earth is wounded */
+.crack { position: absolute; left: 0; right: 0; bottom: 1.5rem; width: 100%; height: 3.2rem; }
+.crack path { fill: none; stroke: #c2414b; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 6px rgba(194, 65, 75, 0.8)); }
+.fallen .crack path { stroke-dashoffset: 0; transition: stroke-dashoffset 1.8s var(--ease-io) 0.2s; }
+.fall-shadow { position: fixed; inset: 0; z-index: 14; pointer-events: none; visibility: hidden; background: linear-gradient(100deg, rgba(8, 12, 10, 0) 0%, rgba(8, 12, 10, 0.6) 35%, rgba(8, 12, 10, 0.6) 65%, rgba(8, 12, 10, 0) 100%); transform: translateX(-110%); }
+@keyframes pass { to { transform: translateX(110%); } }
+@keyframes tremor { 0%, 100% { transform: none; } 15% { transform: translate(3px, -2px); } 30% { transform: translate(-3px, 2px); } 45% { transform: translate(2px, 2px); } 60% { transform: translate(-2px, -1px); } 80% { transform: translate(1px, 1px); } }
+.falling .fall-shadow { visibility: visible; animation: pass 1.9s var(--ease-io); }
+.falling .s3 > .wrap, .falling .scene { animation: tremor 0.7s linear; }
+/* leaves lose their colour once the fruit is taken */
+.tree-svg.v2 .leaves, .scene .leaves, .leaf-fall { transition: filter 2.4s ease; }
+.fallen .tree-svg.v2 .leaves, .fallen .scene .leaves, .fallen .leaf-fall { filter: saturate(0.15) brightness(0.86); }
+
+/* the scene that keeps pace with the stages */
+.j-scene-wrap { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.j-scene { position: sticky; top: calc(var(--hh, 4.25rem) + 7vh); margin: 0 max(0px, calc((100vw - var(--wrap)) / 2 - 4rem)) 0 auto; width: min(36vw, 27rem); }
+.scene { display: block; width: 100%; height: auto; overflow: visible; }
+.j-count { display: block; margin-top: 0.4rem; text-align: right; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; color: var(--j-count, #3a4c34); transition: color 0.8s; }
+.scene .wood { fill: var(--wood); transition: fill 1s; }
+.scene .twig, .scene .stem { fill: none; stroke: var(--wood); stroke-width: 3; stroke-linecap: round; transition: stroke 1s; }
+.scene .stem { stroke-width: 2.2; }
+.scene .ground { fill: none; stroke: var(--wood); stroke-width: 2; stroke-linecap: round; opacity: 0.45; transition: stroke 1s; }
+.scene .sun { transition: opacity 1.4s; }
+.scene .rain { opacity: 0; transition: opacity 1.6s; }
+.scene .rain path { fill: none; stroke: #9fb0a8; stroke-width: 1.2; stroke-linecap: round; }
+.scene .skin { fill: var(--red); stroke: var(--red-dark); stroke-width: 0.5; }
+.scene .flesh { fill: #f3e6c4; }
+.scene .shine { fill: none; stroke: rgba(255, 250, 240, 0.55); stroke-width: 1.2; stroke-linecap: round; }
+.scene .leaflet { fill: #526447; }
+.scene .bite { fill: #000; opacity: 0; transition: opacity 0.25s 0.3s; }
+.scene .sc-apple { transition: transform 1.1s cubic-bezier(0.55, 0, 1, 0.45); }
+.scene .sc-snake { fill: none; stroke: url(#scales2); stroke-width: 12; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; transition: stroke-dashoffset 1.5s var(--ease-io), opacity 0.3s; }
+.scene .sc-head { opacity: 0; transition: opacity 0.3s; }
+.scene .sc-head ellipse { fill: #c2b05a; stroke: #7d7230; }
+.scene .fl { transition: transform 2.8s cubic-bezier(0.45, 0, 0.85, 0.65) var(--fd, 0ms), opacity 0.6s linear calc(var(--fd, 0ms) + 2.3s); }
+@keyframes rustle { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+.journey[data-stage="2"] .scene .lv { animation: rustle 0.42s ease-in-out 8 alternate; }
+.journey[data-stage="2"] .scene .sun { opacity: 0.55; }
+.journey:is([data-stage="2"], [data-stage="3"]) .sc-snake { stroke-dashoffset: 0; opacity: 1; }
+.journey:is([data-stage="2"], [data-stage="3"]) .sc-head { opacity: 1; transition-delay: 1.4s; }
+.journey:is([data-stage="3"], [data-stage="4"], [data-stage="5"], [data-stage="6"]) { --wood: #7c8974; --j-count: var(--gold); }
+.journey:is([data-stage="3"], [data-stage="4"], [data-stage="5"], [data-stage="6"]) .scene .sun { opacity: 0; }
+.journey:is([data-stage="3"], [data-stage="4"], [data-stage="5"], [data-stage="6"]) .scene .b1 { opacity: 1; }
+.journey:is([data-stage="5"], [data-stage="6"]) .scene .b2 { opacity: 1; }
+.journey:is([data-stage="3"], [data-stage="4"], [data-stage="5"], [data-stage="6"]) .scene .fl { transform: translate(var(--fx), var(--fy)) rotate(var(--fr)); opacity: 0; }
+.journey[data-stage="6"] .scene .sc-apple { transform: translateY(142px) rotate(58deg); }
+.journey[data-stage="6"] .scene .rain { opacity: 0.4; }
+@media (max-width: 62rem) {
+  .j-scene-wrap { position: sticky; inset: auto; top: var(--hh, 5.6rem); height: 9.5rem; z-index: 4; background-color: #dfe5cf; transition: background-color 0.9s; border-bottom: 1px solid rgba(20, 43, 34, 0.12); }
+  .j-scene { position: static; margin: 0; width: auto; height: 100%; overflow: hidden; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+  .scene { order: 2; width: auto; height: 100%; }
+  .j-count { order: 1; margin: 0; font-size: 0.9rem; }
+  .journey[data-stage="2"] .j-scene-wrap { background-color: #b4bea2; }
+  .journey[data-stage="3"] .j-scene-wrap { background-color: #2d332e; }
+  .journey[data-stage="4"] .j-scene-wrap { background-color: #213029; }
+  .journey[data-stage="5"] .j-scene-wrap { background-color: #18261f; }
+  .journey[data-stage="6"] .j-scene-wrap { background-color: #0c1410; }
+  .stage-band { min-height: 0; padding: 6rem 0 5rem; }
+  .s1 { padding-top: 3rem; }
+  .s2::after { display: none; }
+}
+.section.dark.shelf-teaser { background-image: var(--maze-light), linear-gradient(to bottom, #0c1410, var(--forest) 9rem); background-size: 5.25rem, auto; }
+
+/* ---------- The ending: the gate, and two figures leaving ---------- */
+.ending { position: relative; height: clamp(15rem, 34vw, 25rem); overflow: hidden; background: #12211b; }
+.end-scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+@keyframes flicker { 0%, 100% { opacity: 0.75; } 40% { opacity: 1; } 70% { opacity: 0.6; } }
+.ending .fire { animation: flicker 3.2s ease-in-out infinite; }
+.walkers { position: absolute; left: 66%; bottom: 23%; width: clamp(1.9rem, 4vw, 3rem); transform-origin: 50% 100%; }
+@keyframes leave { from { transform: translate(-34vw, 6%) scale(1.9); } }
+.ending.in .walkers { animation: leave 18s cubic-bezier(0.2, 0.5, 0.3, 1) backwards; }
+body.garden .quote-band { background-image: var(--maze-light), linear-gradient(to bottom, #12211b, #24362d 55%, #2f4238); background-size: 5.25rem, auto; }
+body.garden .site-footer { background-color: #2f4238; }
+body.garden .site-footer p { color: rgba(242, 238, 219, 0.82); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sleeper, .waker .glint, .waker.in .neck, .waker.in .s-head, .ending .fire, .ending.in .walkers, .scene .lv { animation: none !important; }
+  .scene *, .crack path, .tree-svg.v2 .leaves, .scene .leaves, .leaf-fall, .j-scene-wrap, .j-count { transition: none !important; }
+  .fall-shadow { display: none; }
+}
