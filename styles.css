@@ -456,3 +456,43 @@ body.garden .g3 { background: linear-gradient(to bottom, #a3ad98 0, #394438 9rem
 .mini-shelf a:hover { transform: translateY(-0.9rem); }
 .mini-shelf svg { display: block; width: 100%; height: 100%; }
 @media (prefers-reduced-motion: reduce) { .mini-shelf a { animation: none !important; transition: none; } }
+
+/* ---------- The maze: a faint labyrinth under every page, tighter where it is darker ---------- */
+:root { --maze-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112'%3E%3Cpath d='M16 0v16M0 16h16M0 32h16M16 48v16M0 64h16M0 80h16M16 80v16M0 112h16M0 0h16M16 16h16M32 16v16M32 32v16M16 48h16M32 64v16M16 80h16M32 96v16M16 112h16M16 0h16M48 0v16M48 16v16M48 32v16M32 64h16M48 80v16M32 96h16M48 96v16M48 16h16M48 48h16M48 64h16M64 64v16M64 80v16M64 96v16M64 16h16M64 32h16M80 48v16M80 64v16M80 80v16M80 96v16M64 112h16M64 0h16M96 0v16M80 16h16M80 32h16M80 48h16M96 64v16M96 80v16M96 96v16M96 16h16M96 32h16M112 32v16M0 32v16M96 48h16M96 64h16M96 80h16M112 96v16M0 96v16' fill='none' stroke='rgb%2820%2C43%2C34%29' stroke-opacity='0.06' stroke-width='1' stroke-linecap='square'/%3E%3C/svg%3E"); --maze-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112'%3E%3Cpath d='M16 0v16M0 16h16M0 32h16M16 48v16M0 64h16M0 80h16M16 80v16M0 112h16M0 0h16M16 16h16M32 16v16M32 32v16M16 48h16M32 64v16M16 80h16M32 96v16M16 112h16M16 0h16M48 0v16M48 16v16M48 32v16M32 64h16M48 80v16M32 96h16M48 96v16M48 16h16M48 48h16M48 64h16M64 64v16M64 80v16M64 96v16M64 16h16M64 32h16M80 48v16M80 64v16M80 80v16M80 96v16M64 112h16M64 0h16M96 0v16M80 16h16M80 32h16M80 48h16M96 64v16M96 80v16M96 96v16M96 16h16M96 32h16M112 32v16M0 32v16M96 48h16M96 64h16M96 80h16M112 96v16M0 96v16' fill='none' stroke='rgb%28242%2C238%2C219%29' stroke-opacity='0.06' stroke-width='1' stroke-linecap='square'/%3E%3C/svg%3E"); --gold: #d6c48f; }
+body { background-image: var(--maze-ink); background-size: 10.5rem; }
+.section.alt { background-image: var(--maze-ink); background-size: 9rem; }
+body.garden .hero { background-image: var(--maze-ink), linear-gradient(to bottom, var(--paper), #e7e5d2); background-size: 10.5rem, auto; }
+body.garden .g1 { background-image: var(--maze-ink), linear-gradient(to bottom, #e7e5d2, #d6d8c7); background-size: 9rem, auto; }
+body.garden .g2 { background-image: var(--maze-ink), linear-gradient(to bottom, #d6d8c7, #a3ad98); background-size: 7.25rem, auto; }
+.section.dark, .page-head, .site-footer { background-image: var(--maze-light); background-size: 5.25rem; }
+body.path main { background-image: var(--maze-ink), linear-gradient(to bottom, #e7e5d2 0%, #d6d8c7 38%, #394438 68%, #142b22 100%); background-size: 8rem, auto; }
+
+/* ---------- Red belongs to the fruit, the key buttons and the Fall ---------- */
+a { color: var(--forest); text-decoration-color: rgba(82, 100, 71, 0.7); }
+a:hover { color: var(--moss); }
+a:focus-visible, summary:focus-visible { outline-color: var(--moss); }
+.site-header a:focus-visible, .site-footer a:focus-visible, .section.dark a:focus-visible, .page-head a:focus-visible { outline-color: var(--gold); }
+.btn, .btn:hover { color: #fffaf0; }
+.btn.ghost, .btn.ghost:hover { color: var(--parchment); }
+body.garden .hero .btn.ghost, body.garden .hero .btn.ghost:hover, .btn.ghost.dark { color: var(--forest); }
+.site-footer a, .site-footer a:hover { color: var(--parchment); }
+.site-nav a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--gold); }
+.progress i { background: var(--gold); }
+body.garden .hero h1 em { color: var(--moss); }
+.scroll-cue span { background: var(--moss); }
+.build-card .num, .build-card .more { color: var(--moss); }
+.path-card .no, .path-card .go, .path-top .kicker { color: var(--moss); }
+.path-top .crumb:hover { color: var(--moss); }
+.section.dark .path-card .no, .section.dark .path-card .go { color: var(--gold); }
+.fruit-card, .fruit-info { border-left-color: var(--moss); }
+.toc a:hover { border-left-color: var(--moss); }
+.fruit-rail a:hover { border-color: var(--moss); }
+.stage blockquote { border-left-color: var(--gold); }
+.stage .q { color: var(--gold); }
+.path-next a, .path-next a:hover { color: var(--parchment); }
+.brand, .brand:hover { color: var(--parchment); }
+.site-nav a, .site-nav a:hover { color: rgba(242, 238, 219, 0.85); }
+.site-nav a[aria-current="page"] { color: #fff; }
+.page-head .back, .page-head .back:hover { color: var(--gold); }
+.path-card, .path-card:hover, .build-card, .build-card:hover { color: var(--ink); }
+.section.dark .path-card, .section.dark .path-card:hover { color: #fffaf0; }
