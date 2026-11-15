@@ -194,7 +194,7 @@
   $('.d-close').addEventListener('click', closeDetail);
 
   // ---- the loop
-  let last = performance.now();
+  let last = performance.now(), lastSig = '';
   function frame(now) {
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
     const k = reduce ? 1 : 1 - Math.exp(-(dragging && dragMoved ? 18 : 5.2) * dt);
@@ -214,19 +214,29 @@
     tiltY += (ty - tiltY) * kt; tiltX += (tx - tiltX) * kt;
 
     const kl = reduce ? 1 : 1 - Math.exp(-12 * dt);
+    let lifts = 0;
     for (const t of tapes) {
+      const want = hover === t.v && Math.abs(rel(t.v)) > 0.5 ? 1 : 0;
+      t.lift += (want - t.lift) * kl;
+      if (Math.abs(want - t.lift) < 0.002) t.lift = want;
+      lifts += t.lift * (t.v + 1);
+    }
+    const sig = s.toFixed(4) + '|' + tiltX.toFixed(2) + '|' + tiltY.toFixed(2) + '|' + lifts.toFixed(3) + '|' + W + '|' + H;
+    if (sig !== lastSig) for (const t of tapes) {
       const r = rel(t.v), x = F(r);
       if (Math.abs(x) > W / 2 + 1.5 * d) { if (!t.hidden) { t.el.style.visibility = 'hidden'; t.hidden = true; } continue; }
       if (t.hidden) { t.el.style.visibility = 'visible'; t.hidden = false; }
       const o = smooth(Math.max(0, 1 - Math.abs(r)));
-      t.lift += ((hover === t.v && Math.abs(r) > 0.5 ? 1 : 0) - t.lift) * kl;
       const y = -o * 0.025 * H - t.lift * 0.045 * H;
       t.el.style.transform = 'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,' + (o * 0.2 * H).toFixed(2) + 'px) rotateZ(' + (-4.5 * o).toFixed(3) + 'deg) rotateX(' + (tiltX * o).toFixed(3) + 'deg) rotateY(' + (-90 * o + tiltY * o).toFixed(3) + 'deg)';
       t.el.style.zIndex = Math.round(100 - Math.abs(r) * 4);
       t.sp.style.setProperty('--shade', (o * 0.55).toFixed(3));
       t.cv.style.setProperty('--shade', ((1 - o) * 0.5).toFixed(3));
       t.cv.style.setProperty('--o', o.toFixed(3));
+      t.sp.style.setProperty('--lift', t.lift.toFixed(3));
     }
+
+    lastSig = sig;
 
     const ps = isOpen ? 0 : smooth(Math.max(0, 1 - Math.abs(T - s) * 3));
     play.style.transform = 'translate3d(' + (W / 2 - 0.5 * d - 6).toFixed(1) + 'px,' + (cyS + 0.36 * H).toFixed(1) + 'px,0) scale(' + ps.toFixed(3) + ')';
