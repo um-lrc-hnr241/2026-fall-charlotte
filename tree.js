@@ -88,6 +88,18 @@ const LABELS = { ripe: "Ripe", ripening: "Ripening", bud: "Not yet grown" };
       const on = Number(g.dataset.fruit) === n;
       g.classList.toggle("on", on); g.setAttribute("aria-pressed", on);
     });
+    const head = document.querySelector(".snake-head");
+    const chosen = document.querySelector('.fruit[data-fruit="' + n + '"]');
+    if (head && chosen && head.dataset.x) {
+      const m = /translate\(([-\d.]+)[ ,]+([-\d.]+)\)/.exec(chosen.parentNode.getAttribute("transform") || "");
+      if (m) {
+        let a = Math.atan2(m[2] - head.dataset.y, m[1] - head.dataset.x) * 180 / Math.PI;
+        const cur = parseFloat(head.dataset.a) || 0;
+        a = cur + ((((a - cur) % 360) + 540) % 360 - 180);   // turn the short way round
+        head.dataset.a = a;
+        head.style.transform = "rotate(" + a.toFixed(1) + "deg)";
+      }
+    }
     const card = document.querySelector(".fruit-info");
     if (card && card.animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
       card.querySelectorAll(":scope > *:not([hidden])").forEach((el, i) =>
