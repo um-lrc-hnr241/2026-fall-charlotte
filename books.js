@@ -19,6 +19,24 @@ const BOOKS = [
   "credit": "The opening lines of Sasha’s Build 1."
  },
  {
+  "id": "noa-1",
+  "who": "noa",
+  "author": "Noa Blackman",
+  "short": "Blackman",
+  "fruit": 1,
+  "word": "One",
+  "line": "Charlotte · Spokesperson",
+  "path": "Path 02",
+  "meta": [
+   "Charlotte",
+   "Spokesperson",
+   "813 words"
+  ],
+  "opening": "When we ask whether a mind is genuinely thinking, one test is whether it can produce something that was not already contained in what it was given. A system that only recombines prior inputs may generate novelty without beginning anything new. John Milton’s Paradise Lost depends on that distinction.",
+  "href": "noa.html#fruit-1",
+  "credit": "The opening lines of Noa’s Build 1."
+ },
+ {
   "id": "oliver-1",
   "who": "oliver",
   "author": "Ollie Kaiden",
@@ -87,6 +105,42 @@ const BOOKS = [
   "opening": "At first, Paradise Lost and Westworld seem to approach consciousness from opposite directions. Milton writes about human beings, temptation, and the Fall, while Westworld follows artificial beings struggling to understand minds built and programmed by others.",
   "href": "build-2.html",
   "credit": "The opening lines of the team essay."
+ },
+ {
+  "id": "sasha-3",
+  "who": "sasha",
+  "author": "Sasha Sindwani",
+  "short": "Sindwani",
+  "fruit": 3,
+  "word": "Three",
+  "line": "Ford · Recorder",
+  "path": "Path 01",
+  "meta": [
+   "Ford",
+   "Recorder",
+   "712 words"
+  ],
+  "opening": "My understanding of consciousness has shifted from focusing on physical causation to considering how consciousness shapes the way people interpret their experiences.",
+  "href": "sasha.html#fruit-3",
+  "credit": "The opening lines of Sasha’s Build 3."
+ },
+ {
+  "id": "noa-3",
+  "who": "noa",
+  "author": "Noa Blackman",
+  "short": "Blackman",
+  "fruit": 3,
+  "word": "Three",
+  "line": "Charlotte · Spokesperson",
+  "path": "Path 02",
+  "meta": [
+   "Charlotte",
+   "Spokesperson",
+   "798 words"
+  ],
+  "opening": "In Build 1, I asked where Eve’s causal chain begins if she reaches her own conclusion from a premise Satan supplies. I treated her desire for superiority as the endpoint of that reasoning, but rereading has shifted my attention to what follows her acceptance of his promise of greater knowledge.",
+  "href": "noa.html#fruit-3",
+  "credit": "The opening lines of Noa’s Build 3."
  },
  {
   "id": "oliver-3",
@@ -161,6 +215,42 @@ const BOOKS = [
   "credit": "The opening lines of Daisy’s Build 3."
  },
  {
+  "id": "sasha-4",
+  "who": "sasha",
+  "author": "Sasha Sindwani",
+  "short": "Sindwani",
+  "fruit": 4,
+  "word": "Four",
+  "line": "Ford · Recorder",
+  "path": "Path 01",
+  "meta": [
+   "Ford",
+   "Recorder",
+   "754 words"
+  ],
+  "opening": "In Build 3, I argued that Adam and Eve come to understand their choices, their relationship, and their futures after the Fall through narration: the quality of consciousness that coordinates successive states over time into a sequence whose design gives those events purpose.",
+  "href": "sasha.html#fruit-4",
+  "credit": "The opening lines of Sasha’s Build 4."
+ },
+ {
+  "id": "noa-4",
+  "who": "noa",
+  "author": "Noa Blackman",
+  "short": "Blackman",
+  "fruit": 4,
+  "word": "Four",
+  "line": "Charlotte · Spokesperson",
+  "path": "Path 02",
+  "meta": [
+   "Charlotte",
+   "Spokesperson",
+   "754 words"
+  ],
+  "opening": "In Build 3, I argued that Milton uses reconsolidation to show how consciousness reinterprets experience to build continuity between past and future.",
+  "href": "noa.html#fruit-4",
+  "credit": "The opening lines of Noa’s Build 4."
+ },
+ {
   "id": "oliver-4",
   "who": "oliver",
   "author": "Ollie Kaiden",
@@ -231,6 +321,42 @@ const BOOKS = [
   "opening": "At the end of Build 3, I made the claim that Satan, Adam, and Eve each interact with reflexivity (the awareness of oneself being aware) in different ways, and that none of them end up making a good decision, proving that reflexivity doesn’t equate to good judgment.",
   "href": "daisy.html#fruit-4",
   "credit": "The opening lines of Daisy’s Build 4."
+ },
+ {
+  "id": "sasha-5",
+  "who": "sasha",
+  "author": "Sasha Sindwani",
+  "short": "Sindwani",
+  "fruit": 5,
+  "word": "Five",
+  "line": "Ford · Recorder",
+  "path": "Path 01",
+  "meta": [
+   "Ford",
+   "Recorder",
+   "719 words"
+  ],
+  "opening": "In Build 3, I examined Adam and Eve’s response to the Fall in Milton’s Paradise Lost through narration, the quality of consciousness that coordinates successive states over time into a sequence whose design gives those events purpose.",
+  "href": "sasha.html#fruit-5",
+  "credit": "The opening lines of Sasha’s Build 5."
+ },
+ {
+  "id": "noa-5",
+  "who": "noa",
+  "author": "Noa Blackman",
+  "short": "Blackman",
+  "fruit": 5,
+  "word": "Five",
+  "line": "Charlotte · Spokesperson",
+  "path": "Path 02",
+  "meta": [
+   "Charlotte",
+   "Spokesperson",
+   "820 words"
+  ],
+  "opening": "Milton and Montaigne both explore reconsolidation through a self that looks back on what it has become and wishes it were otherwise. Montaigne describes himself as “very ill-formed” and concedes, “But now it is done” (610).",
+  "href": "noa.html#fruit-5",
+  "credit": "The opening lines of Noa’s Build 5."
  },
  {
   "id": "oliver-5",

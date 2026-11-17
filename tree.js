@@ -7,7 +7,7 @@ const FRUITS = [
   "name": "Build 1",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually. On the site so far: Sasha, Ollie, Will, Daisy.",
+  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Will, Daisy.",
   "link": "library.html#fruit-1",
   "linkText": "Find it on the shelf →"
  },
@@ -25,7 +25,7 @@ const FRUITS = [
   "name": "Build 3",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Rhea, Will, Daisy.",
   "link": "library.html#fruit-3",
   "linkText": "Find it on the shelf →"
  },
@@ -34,7 +34,7 @@ const FRUITS = [
   "name": "Build 4",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Rhea, Will, Daisy.",
   "link": "library.html#fruit-4",
   "linkText": "Find it on the shelf →"
  },
@@ -43,7 +43,7 @@ const FRUITS = [
   "name": "Build 5",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually. On the site so far: Ollie, Rhea, Will, Daisy.",
+  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Rhea, Will, Daisy.",
   "link": "library.html#fruit-5",
   "linkText": "Find it on the shelf →"
  },
