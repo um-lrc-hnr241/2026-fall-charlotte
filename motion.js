@@ -13,6 +13,31 @@
   const setHH = () => { if (header) root.style.setProperty('--hh', header.offsetHeight + 'px'); };
   setHH();
 
+  // ---- arrival: the visitor is brought online, then the doors open onto the garden
+  const arrival = document.querySelector('.arrival');
+  if (arrival && root.classList.contains('arriving')) {
+    const btn = arrival.querySelector('.arr-enter');
+    let gone = false;
+    const enter = () => {
+      if (gone) return; gone = true;
+      try { sessionStorage.setItem('arrived', '1'); } catch (e) {}
+      arrival.classList.add('open');
+      setTimeout(() => { root.classList.remove('arriving'); arrival.remove(); }, 1250);
+    };
+    arrival.addEventListener('click', enter);
+    addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === 'Escape' || e.key === ' ') enter(); });
+    if (btn) btn.focus({ preventScroll: true });
+  }
+  // ---- the trailer loads (and makes sound) only when the visitor presses play
+  $$('.yt').forEach(b => b.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+    f.title = 'Westworld Season 1 official trailer';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    b.replaceWith(f);
+  }));
+
   // ---- children of [data-stagger] arrive one after another
   $$('[data-stagger]').forEach(box => Array.from(box.children).forEach((el, i) => el.style.setProperty('--d', i * 90 + 'ms')));
 
