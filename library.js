@@ -104,7 +104,7 @@
     active = i;
     const b = BOOKS[i];
     swap(cap.title, b.author, dir);
-    swap(cap.sub, 'Fruit ' + pad(b.fruit) + ' / Build ' + b.word, dir);
+    swap(cap.sub, 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word), dir);
     swap(cap.year, b.line, dir);
     placeTab();
   }
@@ -163,7 +163,8 @@
     if (isOpen) return;
     isOpen = true; T = Math.round(T);
     const b = BOOKS[active];
-    $('#d-sub').textContent = 'Fruit ' + pad(b.fruit) + ' / Build ' + b.word;
+    $('#d-sub').textContent = 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word);
+    $('#d-read').textContent = b.cta || 'Read the essay';
     $('#d-title').textContent = b.author;
     $('#d-meta').textContent = b.meta.join(' / ');
     $('#d-syn').textContent = b.opening;

@@ -80,7 +80,7 @@
   if (mini && typeof BOOKS !== 'undefined') {
     mini.innerHTML = BOOKS.map((b, i) => '<a href="library.html#' + b.id + '" tabindex="-1" style="--i:' + i + ';--hs:' + bookScale(b) + '">' + spineSVG(b) + '</a>').join('');
     mini.removeAttribute('aria-hidden');
-    $$('a', mini).forEach((a, i) => a.setAttribute('aria-label', 'Build ' + BOOKS[i].fruit + ', ' + BOOKS[i].author));
+    $$('a', mini).forEach((a, i) => a.setAttribute('aria-label', (BOOKS[i].spine || 'Build ' + BOOKS[i].fruit) + ', ' + BOOKS[i].author));
   }
 
   // ---- things that follow the scroll. Measured once, then only arithmetic per frame.

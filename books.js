@@ -107,6 +107,25 @@ const BOOKS = [
   "credit": "The opening lines of the team essay."
  },
  {
+  "id": "bibliography",
+  "who": "team",
+  "author": "Team Charlotte",
+  "short": "Team",
+  "fruit": 2,
+  "over": "Build Two",
+  "word": "Bibliography",
+  "spine": "Bibliography",
+  "line": "Sources for the team essay",
+  "meta": [
+   "Team",
+   "57 sources"
+  ],
+  "opening": "Aristotle. Topics. C. 330 BCE. Metaphysics. C. 350 BCE. The Basic Works of Aristotle. Ed. Richard McKeon. New York: Random House, 1941.",
+  "href": "bibliography.html",
+  "credit": "The first entry in the bibliography.",
+  "cta": "Open the bibliography"
+ },
+ {
   "id": "sasha-3",
   "who": "sasha",
   "author": "Sasha Sindwani",
@@ -473,8 +492,8 @@ function coverSVG(b, vh) {
 <rect x="16" y="16" width="408" height="${vh - 32}" fill="none" stroke="${c.ink}" stroke-opacity=".5" stroke-width="1.2"/>
 <text x="220" y="54" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="11.5" letter-spacing="3.2" fill="${c.ink}">WHO PLANTED THE THOUGHT?</text>
 <path d="M186 70h68" stroke="${c.acc}" stroke-width="2.5"/>
-<text x="220" y="126" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="34" fill="${c.ink}">Build</text>
-<text x="220" y="204" text-anchor="middle" font-family="${SERIF}" font-size="88" letter-spacing="-2" fill="${c.ink}">${b.word}</text>
+<text x="220" y="126" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="34" fill="${c.ink}">${b.over || 'Build'}</text>
+<text x="220" y="204" text-anchor="middle" font-family="${SERIF}" font-size="${b.word.length > 7 ? 60 : 88}" letter-spacing="-2" fill="${c.ink}">${b.word}</text>
 <g transform="translate(220 ${mid}) scale(${Math.min(1, (vh - 380) / 250).toFixed(2)})">${motif(b, c)}</g>
 <text x="220" y="${vh - 100}" text-anchor="middle" font-family="${SERIF}" font-size="28" fill="${c.ink}">${b.author}</text>
 <text x="220" y="${vh - 74}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10" letter-spacing="2.4" fill="${c.ink}" fill-opacity=".82">${under.toUpperCase().replace(/&/g, '&amp;')}</text>
@@ -494,7 +513,7 @@ function spineSVG(b, vh) {
 <rect width="100" height="78" fill="${c.acc}"/>
 <text x="50" y="51" text-anchor="middle" font-family="${SERIF}" font-size="34" fill="${c.bg}">0${b.fruit}</text>
 <path d="M18 92h64M18 ${vh - 84}h64" stroke="${c.ink}" stroke-opacity=".55" stroke-width="1.2"/>
-<text transform="translate(50 ${Math.round(92 + (vh - 300) * 0.5)}) rotate(90)" text-anchor="middle" dominant-baseline="central" font-family="${SERIF}" font-size="41" fill="${c.ink}">Build ${b.word}</text>
+<text transform="translate(50 ${Math.round(92 + (vh - 300) * 0.5)}) rotate(90)" text-anchor="middle" dominant-baseline="central" font-family="${SERIF}" font-size="41" fill="${c.ink}">${b.spine || 'Build ' + b.word}</text>
 <text transform="translate(50 ${vh - 150}) rotate(90)" text-anchor="middle" dominant-baseline="central" font-family="${SANS}" font-weight="600" font-size="13.5" letter-spacing="3" fill="${c.ink}" fill-opacity=".85">${b.short.toUpperCase()}</text>
 <rect x="21" y="${vh - 62}" width="58" height="27" fill="none" stroke="${c.ink}" stroke-width="1.4"/>
 <text x="50" y="${vh - 43.5}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="12.5" letter-spacing="1.5" fill="${c.ink}">241</text>
