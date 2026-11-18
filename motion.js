@@ -32,7 +32,7 @@
   $$('.yt').forEach(b => b.addEventListener('click', () => {
     const f = document.createElement('iframe');
     f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
-    f.title = 'Westworld Season 1 official trailer';
+    f.title = 'westworld - live without limits';
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
     b.replaceWith(f);
