@@ -501,8 +501,8 @@ function coverSVG(b, vh) {
 <text x="220" y="${vh - 100}" text-anchor="middle" font-family="${SERIF}" font-size="28" fill="${c.ink}">${b.author}</text>
 <text x="220" y="${vh - 74}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10" letter-spacing="2.4" fill="${c.ink}" fill-opacity=".82">${under.toUpperCase().replace(/&/g, '&amp;')}</text>
 <text x="34" y="${vh - 36}" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="2" fill="${c.ink}">${b.foot || 'FRUIT 0' + b.fruit}</text>
-<rect x="346" y="${vh - 53}" width="64" height="25" fill="none" stroke="${c.ink}" stroke-width="1.2"/>
-<text x="378" y="${vh - 36}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="${c.ink}">HP 241</text>
+<rect x="314" y="${vh - 53}" width="96" height="25" fill="none" stroke="${c.ink}" stroke-width="1.2"/>
+<text x="362" y="${vh - 36}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="${c.ink}">HONORS 241</text>
 <rect width="10" height="${vh}" fill="#000" fill-opacity=".14"/><rect x="10" width="1.5" height="${vh}" fill="#fff" fill-opacity=".14"/>
 </svg>`;
 }
