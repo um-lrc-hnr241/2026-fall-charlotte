@@ -28,26 +28,17 @@
     addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === 'Escape' || e.key === ' ') enter(); });
     if (btn) btn.focus({ preventScroll: true });
     // the video plays silently behind the welcome; it never makes a sound
-    const bg = arrival.querySelector('[data-yt-bg]');
+    const bg = arrival.querySelector('[data-bg-video]');
     if (bg) {
-      const id = bg.dataset.ytBg;
-      const f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3';
-      f.title = 'Background video'; f.tabIndex = -1; f.allow = 'autoplay; encrypted-media';
-      f.addEventListener('load', () => setTimeout(() => bg.classList.add('on'), 900));
-      bg.appendChild(f);
+      const v = document.createElement('video');
+      v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.setAttribute('playsinline', '');
+      v.poster = bg.dataset.poster; v.src = bg.dataset.bgVideo;
+      v.addEventListener('playing', () => bg.classList.add('on'), { once: true });
+      bg.appendChild(v);
+      const p = v.play(); if (p && p.catch) p.catch(() => { bg.classList.add('on'); });
+      arrival.addEventListener('transitionend', () => { if (arrival.classList.contains('open')) v.pause(); });
     }
   }
-  // ---- the trailer loads (and makes sound) only when the visitor presses play
-  $$('.yt').forEach(b => b.addEventListener('click', () => {
-    const f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
-    f.title = 'westworld - live without limits';
-    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    f.allowFullscreen = true;
-    b.replaceWith(f);
-  }));
-
   // ---- children of [data-stagger] arrive one after another
   $$('[data-stagger]').forEach(box => Array.from(box.children).forEach((el, i) => el.style.setProperty('--d', i * 90 + 'ms')));
 
