@@ -783,3 +783,25 @@ html.arriving .arrival { display: grid; place-items: center; position: fixed; in
 .video figcaption, .portrait figcaption { margin-top: 1rem; font-family: var(--sans); font-size: 0.8rem; line-height: 1.5; color: #3d4a3c; }
 
 .park-grid.solo { grid-template-columns: minmax(0, 30rem); }
+
+/* ---------- The ending: the Garden crumbles away to show the Expulsion ---------- */
+.eden-fall { position: relative; height: 230vh; background: #12211b; }
+.ef-stage { position: sticky; top: var(--hh, 4.25rem); height: calc(100vh - var(--hh, 4.25rem)); overflow: hidden; }
+.ef-under, .ef-over, .ef-canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ef-under { filter: saturate(0.75) brightness(0.8); }
+/* without the script (or with reduced motion) the garden simply fades into the expulsion */
+.ef-over { -webkit-mask-image: linear-gradient(to bottom, #000 25%, transparent 70%); mask-image: linear-gradient(to bottom, #000 25%, transparent 70%); }
+.eden-fall.js-on { height: 260vh; }
+.eden-fall.js-on .ef-over { display: none; }
+.ef-canvas { display: none; }
+.eden-fall.js-on .ef-canvas { display: block; }
+.ef-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(18, 33, 27, 0.6) 0, rgba(18, 33, 27, 0) 22%, rgba(18, 33, 27, 0) 62%, rgba(18, 33, 27, 0.92) 100%); }
+.ef-cap { position: absolute; left: 0; right: 0; bottom: 1.1rem; margin: 0 auto; max-width: 46rem; padding: 0 1.25rem; text-align: center; font-family: var(--sans); font-size: 0.75rem; line-height: 1.5; color: rgba(242, 238, 219, 0.86); }
+@media (max-width: 48rem) { .eden-fall, .eden-fall.js-on { height: 190vh; } .ef-cap { font-size: 0.68rem; } }
+@media (prefers-reduced-motion: reduce) { .eden-fall, .eden-fall.js-on { height: auto; } .ef-stage { position: relative; top: 0; height: 80vh; } .eden-fall.js-on .ef-over { display: block; } .eden-fall.js-on .ef-canvas { display: none; } }
+
+/* Charlotte in the Orchard */
+body.orchard .gallery { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+body.orchard .portrait { margin: 0; max-width: 34rem; }
+body.orchard .portrait img { width: 100%; height: auto; border-radius: 0.3rem; border: 1px solid rgba(203, 216, 204, 0.25); box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5); }
+body.orchard .portrait figcaption { margin-top: 1rem; font-family: var(--sans); font-size: 0.85rem; line-height: 1.5; color: #b9c4ae; }
