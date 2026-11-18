@@ -771,3 +771,11 @@ html.arriving .arrival { display: grid; place-items: center; position: fixed; in
 .portrait img { width: 100%; height: auto; border-radius: 0.3rem; box-shadow: 0 1.5rem 3rem rgba(20, 43, 34, 0.25); }
 @media (max-width: 48rem) { .park-grid { grid-template-columns: 1fr; } .portrait { max-width: 18rem; } }
 @media (prefers-reduced-motion: reduce) { .arr-ring g, .arr-log span, .arr-in h2, .arr-enter, .arr-ring .core { animation: none !important; } .arr-door { transition: none; } }
+
+/* the welcome plays the video, muted, behind a dark veil */
+.arr-video { position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0; transition: opacity 1.6s ease; }
+.arr-video.on { opacity: 1; }
+.arr-video iframe { position: absolute; left: 50%; top: 50%; width: max(100vw, 177.78vh); height: max(56.25vw, 100vh); transform: translate(-50%, -50%) scale(1.15); border: 0; }
+.arr-video::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(6, 9, 8, 0.45), rgba(6, 9, 8, 0.82)); }
+.arrival.open .arr-video { opacity: 0; transition: opacity 0.5s ease; }
+.arr-in { z-index: 1; }
