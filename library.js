@@ -64,7 +64,7 @@
   const F = r => r * (ws + gap) + (d - ws + 1.6 * gap) * B(r);
 
   // ---- tabs: one per fruit
-  const fruits = Array.from(new Set(BOOKS.map(b => b.fruit))).sort();
+  const fruits = Array.from(new Set(BOOKS.filter(b => !b.lib).map(b => b.fruit))).sort();
   $('#career').textContent = 'Fruits ' + pad(fruits[0]) + '–' + pad(fruits[fruits.length - 1]);
   const tabEls = {};
   function addTab(label, fruit) {
@@ -74,8 +74,9 @@
     tabs.appendChild(b); if (fruit) tabEls[fruit] = b;
   }
   addTab('All', 0); fruits.forEach(f => addTab('Fruit ' + pad(f), f));
+  if (BOOKS.some(b => b.lib)) { const bt = document.createElement('button'); bt.type = 'button'; bt.className = 'lbl'; bt.textContent = 'Sources'; bt.addEventListener('click', () => jumpTo(BOOKS.findIndex(x => x.lib))); tabs.appendChild(bt); tabEls.lib = bt; }
   function placeTab() {
-    const el = tabEls[BOOKS[active].fruit];
+    const el = BOOKS[active].lib ? tabEls.lib : tabEls[BOOKS[active].fruit];
     Object.values(tabEls).forEach(b => b.classList.toggle('on', b === el));
     if (el) { ind.style.width = el.offsetWidth + 'px'; ind.style.transform = 'translateX(' + el.offsetLeft + 'px)'; }
   }
@@ -104,7 +105,7 @@
     active = i;
     const b = BOOKS[i];
     swap(cap.title, b.author, dir);
-    swap(cap.sub, 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word), dir);
+    swap(cap.sub, b.lib ? 'The Library / Bibliography' : 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word), dir);
     swap(cap.year, b.line, dir);
     placeTab();
   }
@@ -163,7 +164,7 @@
     if (isOpen) return;
     isOpen = true; T = Math.round(T);
     const b = BOOKS[active];
-    $('#d-sub').textContent = 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word);
+    $('#d-sub').textContent = b.lib ? 'The Library / Bibliography' : 'Fruit ' + pad(b.fruit) + ' / ' + (b.spine || 'Build ' + b.word);
     $('#d-read').textContent = b.cta || 'Read the essay';
     $('#d-title').textContent = b.author;
     $('#d-meta').textContent = b.meta.join(' / ');

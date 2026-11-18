@@ -107,25 +107,6 @@ const BOOKS = [
   "credit": "The opening lines of the team essay."
  },
  {
-  "id": "bibliography",
-  "who": "team",
-  "author": "Team Charlotte",
-  "short": "Team",
-  "fruit": 2,
-  "over": "Build Two",
-  "word": "Bibliography",
-  "spine": "Bibliography",
-  "line": "Sources for the team essay",
-  "meta": [
-   "Team",
-   "57 sources"
-  ],
-  "opening": "Aristotle. Topics. C. 330 BCE. Metaphysics. C. 350 BCE. The Basic Works of Aristotle. Ed. Richard McKeon. New York: Random House, 1941.",
-  "href": "bibliography.html",
-  "credit": "The first entry in the bibliography.",
-  "cta": "Open the bibliography"
- },
- {
   "id": "sasha-3",
   "who": "sasha",
   "author": "Sasha Sindwani",
@@ -448,6 +429,28 @@ const BOOKS = [
   "opening": "In both Paradise Lost by John Milton and The Body in Pain by Elaine Scarry, the theme of reflexivity appears and plays a similar role.",
   "href": "daisy.html#fruit-5",
   "credit": "The opening lines of Daisy’s Build 5."
+ },
+ {
+  "id": "bibliography",
+  "lib": true,
+  "who": "team",
+  "author": "Team Charlotte",
+  "short": "Library",
+  "fruit": 0,
+  "tag": "✦",
+  "foot": "THE LIBRARY",
+  "over": "The Library",
+  "word": "Bibliography",
+  "spine": "Bibliography",
+  "line": "Sources for the Library",
+  "meta": [
+   "The Library",
+   "57 sources"
+  ],
+  "opening": "Aristotle. Topics. C. 330 BCE. Metaphysics. C. 350 BCE. The Basic Works of Aristotle. Ed. Richard McKeon. New York: Random House, 1941.",
+  "href": "bibliography.html",
+  "credit": "The first entry in the bibliography.",
+  "cta": "Open the bibliography"
  }
 ];
 
@@ -497,7 +500,7 @@ function coverSVG(b, vh) {
 <g transform="translate(220 ${mid}) scale(${Math.min(1, (vh - 380) / 250).toFixed(2)})">${motif(b, c)}</g>
 <text x="220" y="${vh - 100}" text-anchor="middle" font-family="${SERIF}" font-size="28" fill="${c.ink}">${b.author}</text>
 <text x="220" y="${vh - 74}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10" letter-spacing="2.4" fill="${c.ink}" fill-opacity=".82">${under.toUpperCase().replace(/&/g, '&amp;')}</text>
-<text x="34" y="${vh - 36}" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="2" fill="${c.ink}">FRUIT 0${b.fruit}</text>
+<text x="34" y="${vh - 36}" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="2" fill="${c.ink}">${b.foot || 'FRUIT 0' + b.fruit}</text>
 <rect x="346" y="${vh - 53}" width="64" height="25" fill="none" stroke="${c.ink}" stroke-width="1.2"/>
 <text x="378" y="${vh - 36}" text-anchor="middle" font-family="${SANS}" font-weight="600" font-size="10.5" letter-spacing="1.6" fill="${c.ink}">HP 241</text>
 <rect width="10" height="${vh}" fill="#000" fill-opacity=".14"/><rect x="10" width="1.5" height="${vh}" fill="#fff" fill-opacity=".14"/>
@@ -511,7 +514,7 @@ function spineSVG(b, vh) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 ${vh}" preserveAspectRatio="none" aria-hidden="true">
 <rect width="100" height="${vh}" fill="${c.bg}"/>
 <rect width="100" height="78" fill="${c.acc}"/>
-<text x="50" y="51" text-anchor="middle" font-family="${SERIF}" font-size="34" fill="${c.bg}">0${b.fruit}</text>
+<text x="50" y="51" text-anchor="middle" font-family="${SERIF}" font-size="34" fill="${c.bg}">${b.tag || '0' + b.fruit}</text>
 <path d="M18 92h64M18 ${vh - 84}h64" stroke="${c.ink}" stroke-opacity=".55" stroke-width="1.2"/>
 <text transform="translate(50 ${Math.round(92 + (vh - 300) * 0.5)}) rotate(90)" text-anchor="middle" dominant-baseline="central" font-family="${SERIF}" font-size="41" fill="${c.ink}">${b.spine || 'Build ' + b.word}</text>
 <text transform="translate(50 ${vh - 150}) rotate(90)" text-anchor="middle" dominant-baseline="central" font-family="${SANS}" font-weight="600" font-size="13.5" letter-spacing="3" fill="${c.ink}" fill-opacity=".85">${b.short.toUpperCase()}</text>
