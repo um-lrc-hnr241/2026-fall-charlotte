@@ -781,3 +781,5 @@ html.arriving .arrival { display: grid; place-items: center; position: fixed; in
 .arr-in { z-index: 1; }
 
 .video figcaption, .portrait figcaption { margin-top: 1rem; font-family: var(--sans); font-size: 0.8rem; line-height: 1.5; color: #3d4a3c; }
+
+.park-grid.solo { grid-template-columns: minmax(0, 30rem); }
