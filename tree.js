@@ -7,7 +7,7 @@ const FRUITS = [
   "name": "Build 1",
   "kind": "Individual",
   "status": "ripe",
-  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Will, Daisy.",
+  "note": "Written individually. On the site so far: Sasha, Noa, Ollie, Rhea, Will, Daisy.",
   "link": "library.html#fruit-1",
   "linkText": "Find it on the shelf →"
  },

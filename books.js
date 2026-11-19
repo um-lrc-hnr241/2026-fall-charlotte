@@ -55,6 +55,24 @@ const BOOKS = [
   "credit": "The opening lines of Ollie’s Build 1."
  },
  {
+  "id": "rhea-1",
+  "who": "rhea",
+  "author": "Rhea Ajmera",
+  "short": "Ajmera",
+  "fruit": 1,
+  "word": "One",
+  "line": "Elsie · Checker",
+  "path": "Path 04",
+  "meta": [
+   "Elsie",
+   "Checker",
+   "980 words"
+  ],
+  "opening": "Consciousness is often understood as one’s awareness of their internal thoughts and desires and the ability to employ that awareness to influence their own behavior.",
+  "href": "rhea.html#fruit-1",
+  "credit": "The opening lines of Rhea’s Build 1."
+ },
+ {
   "id": "will-1",
   "who": "will",
   "author": "Will Silbergeld",
