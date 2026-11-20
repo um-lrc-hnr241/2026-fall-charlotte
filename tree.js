@@ -50,9 +50,11 @@ const FRUITS = [
  {
   "n": 6,
   "name": "Build 6",
-  "kind": "Team",
-  "status": "bud",
-  "note": "Not yet grown."
+  "kind": "Team essay",
+  "status": "ripe",
+  "quote": "“the mind can reinterpret its history but never erase it”",
+  "link": "build-6.html",
+  "linkText": "Taste this fruit →"
  },
  {
   "n": 7,

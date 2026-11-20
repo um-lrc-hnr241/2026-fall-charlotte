@@ -449,6 +449,22 @@ const BOOKS = [
   "credit": "The opening lines of Daisy’s Build 5."
  },
  {
+  "id": "team-6",
+  "who": "team",
+  "author": "Team Charlotte",
+  "short": "Team",
+  "fruit": 6,
+  "word": "Six",
+  "line": "Team essay",
+  "meta": [
+   "Team essay",
+   "659 words"
+  ],
+  "opening": "How does a mind outlive the self it was? In Paradise Lost, Milton answers in reconsolidation: Satan, Eve, and Adam each respond to their fall by rewriting what their past means. Yet the record resists.",
+  "href": "build-6.html",
+  "credit": "The opening lines of the team essay."
+ },
+ {
   "id": "bibliography",
   "lib": true,
   "who": "team",
